@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 變數/值 比較運算值 變數/值
+    // 相等 『==』 『===』
+    // 不相等 『!=』
+    // 預設帳號為abc，密碼為1234
+    // let uid = "aaa";
+    // let upw = "456";
+
+    // if (uid == "abc") {
+    //     console.log("帳號正確");
+    // } else {
+    //     console.log("帳號錯誤");
+    // }
+    // if (upw != "1234") {
+    //     console.log("密碼錯誤")
+    // } else {
+    //     console.log("密碼正確")
+    // }
+
+    // 帳號正確+密碼正確顯示帳密OK
+    // 帳號正確+密碼錯誤顯示密碼錯誤
+    // 帳號錯誤+密碼正確顯示帳號錯誤
+    // 帳號錯誤+密碼錯誤顯示帳密錯誤
+
+    let uid="aaa";
+    let upw="456";
+
+    // 多層條件檢查
+    if (uid == "aaa" && upw == "456") {
+        console.log("帳密OK");
+    }else if (uid == "aaa" && upw != "123") {
+        console.log("密碼錯誤")
+    }else if (uid != "abc" && upw == "456") {
+        console.log("帳號錯誤")
+    }else if (uid !="abc" && upw != "123") {
+        console.log("帳密錯誤")
+    }
+
+    // 單層條件檢查
+    if (uid == "aaa" && upw == "456") {
+        console.log("帳密OK");
+    }
+    if (uid == "aaa" && upw != "123") {
+        console.log("密碼錯誤")
+    }
+    if (uid != "abc" && upw == "456") {
+        console.log("帳號錯誤")
+    }
+    if (uid !="abc" && upw != "123") {
+        console.log("帳密錯誤")
+    }
+    
+
+</script>
+
+</html>
