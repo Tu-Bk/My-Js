@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS個人網頁</title>
+</head>
+
+<body>
+    <!-- button =>按鈕 -->
+    <!-- onclick =>左鍵一下的事件行為 -->
+    <!-- alert();顯示視窗 ※()內部可跟()外一樣的"OR'不能一樣 -->
+    <!-- 所以任一個事件行為下可以直接使用JS -->
+    <button onclick="alert('你成功點開');">顯示訊息</button>
+    <button onclick="javascript:alert('Hi');">打招呼</button>
+    <!-- 使用超連結時，JS的前綴詞「javascript:」要寫出來 -->
+    <a href="javascript:alert('你好');">說你好</a>
+
+    <!--自訂撰寫JS在目前檔案中-->
+    <!-- 單行註解=>// 多行註解=>/*...*/ -->
+    <script>
+        // console.log(123);
+        // document.write('Helle World');
+    </script>
+
+    <!--載入專案中的外部檔案-->
+    <!--因內往外一層=> ..-->
+    <!--因內往外兩層=> ../../ -->
+    <!--<script src="./abc/KKK/js0618-1.js"></script>-->
+    <!--由外往內一層=> ./-->
+
+    <script src="./abc/KKK/js0618-1.js"></script>
+
+    <!--載入模組化的檔案-->
+    <!--<script type="module" src=""></script>-->
+</body>
+
+</html>
