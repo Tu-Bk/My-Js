@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- JS編寫要先使用 script來編寫 -->
+    <script>
+        //檢查四季
+        // let是宣告變量
+        let a = 3;
+        // 檢查變數a的內容是否完全等於1
+        // (===)完全等於=>左右兩邊的資料型態要相同
+        if (a === 1) {
+            console.log('春天');
+        } else if (a === 2) {
+            console.log('夏天');
+        } else if (a === 3) {
+            console.log('秋天');
+        } else if (a === 4) {
+            console.log('冬天');
+        } else {
+            // 以上條件都不是
+            console.log('季節代號錯誤(1-4)')
+        }
+
+        // 檢查四季 (switch - case)
+        // break可以使用的範圍：1.switch 2.迴圈內
+        // break代表邏輯答對後終止，邏輯沒有答對接續。
+        let b = 1;
+        switch (b) {
+            // case的意思是配對值，且要使用:
+            case 1:
+                console.log('春天')
+                break;
+            case 2:
+                console.log('夏天')
+                break;
+            case 3:
+                console.log('秋天')
+                break;
+            case 4:
+                console.log('冬天')
+                break;
+            default:
+        }
+
+    </script>
+</body>
+
+</html>

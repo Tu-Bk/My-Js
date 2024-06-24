@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 使用輸入視窗prompt
+        // 輸入分數
+        // 1.檢查是否及格
+        // 2.檢查是否為有效分數範圍
+        // 3.檢查是否按了取消
+
+        let score;/* score代表分數 */
+        score = prompt('請輸入分數', '70');
+        // 3.檢查是否按了取消
+        if (score == null) {
+            console.log('您按了取消');
+            alert("您按了取消");
+        } else {
+            if (score == "") {
+                console.log("分數不能空白");
+                alert("分數不能空白");
+            } else if (score == " ") {
+                console.log("分數不能打空白");
+                alert("分數不能打空白");
+            }else{
+                // 1.檢查是否及格
+                // 2.檢查是否為有效分數範圍
+                // 分數<0或者分數>100
+                // 轉換字串分數為數值分數
+                score = Number(score);
+                //檢查是否為非數值的字串轉換後為NaN
+                console.log(score);
+                if (isNaN(score)) {
+                    console.log("輸入的分數err");
+                    // 『||』代表OR的意思，使用shift+\可以打出來
+                } else if (score < 0 || score > 100) {
+                    console.log('不是有效範圍');
+                    alert(score + '分不是有效範圍');
+                } else if (score >= 60 && score < 100) {
+                    console.log('及格');
+                    alert(score + '分及格');
+                } else if (score > 0 && score < 59) {
+                    console.log("不及格");
+                    alert(score + '分不及格');
+                }
+            }
+        }
+    
+        // window.alert(score);
+
+
+
+    </script>
+
+</body>
+
+</html>
