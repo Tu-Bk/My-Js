@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //請用for迴圈寫出1-5
+        //         for (let i = 1; i <= 5; i = i + 1) {
+        // console.log(i);
+        //         }
+
+        // i++  => i+1
+        // for (let i = 1; i <= 100; i++) {
+        //     // document.write('*');
+        //     // document.write('<br>');
+        //     // document.write('*'+'<br>');
+        //     // document.write('*<br>');
+        //     // console.log(i);
+        // }
+
+
+        // // 1-10的合計
+        // let s=0;
+        // // let i=1;  i=1
+        // s=s+i;     //s=0+1=1
+        // i=2;    //i=2
+        // s=s+i;  //s=1+2=3
+
+
+        let s = 0;
+        let i = 1;
+        for (i = 1; i <= 10; i++) {
+            s = s + i;       //累計
+            // console.log(s=s+i);
+        }
+        // 迴圈結束後，顯示s,i結果
+        console.log(`1+2+3+...+10=${s}`);
+        console.log(`i=${i}`);
+        // $代表{}內的資料計算完後顯示出來
+        // ``的意思是字串+數值(這樣可以不使用+來計算)
+    </script>
+</body>
+
+</html>

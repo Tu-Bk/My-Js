@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //血型判斷(注意大小寫)
+        // A=>A型
+        // a=>A型
+        // if-else-if
+        // switch
+        let D = window.prompt("請輸入血型=>if-else-if語法");
+        // let D2 = D.trim();//去除多餘空白，再重新指派D變數
+        // D = D.toLowerCase();//資料轉小寫
+        // D = D.toLocaleUpperCase();//資料轉大寫
+
+
+
+        if (D == null) {//是否按了取消
+            window.alert('你按了取消')
+        } else {
+            D = D.trim().toLocaleUpperCase();
+            // 1.先去除空白後的結果
+            // 2.檢查血型代號
+            if (D == '') {//沒有輸入資料
+                window.alert('請輸入資料')
+            } else if (D == ' ') {//輸入空白資料
+                window.alert('請輸入資料')
+            }
+            else if (D == 'A') {
+                window.alert('A型');
+            } else if (D == 'B') {
+                window.alert('B型');
+            } else if (D == 'O') {
+                window.alert('O型');
+            } else if (D == 'AB') {
+                window.alert('AB型');
+                /*} else if (D == 'A' || D == "a") {
+                    window.alert('A型');
+                } else if (D == 'B' || D == "b") {
+                    window.alert('B型');
+                } else if (D == 'O' || D == "o") {
+                    window.alert('O型');
+                } else if (D == 'AB' || D == "ab" || D == "Ab" || D == "aB") {
+                    window.alert('AB型');
+                } else if (D == 'a') {
+                    window.alert('A型');
+                } else if (D == 'b') {
+                    window.alert('B型');
+                } else if (D == 'o') {
+                    window.alert('O型');
+                } else if (D == 'ab') {
+                    window.alert('AB型');*/
+            } else {
+                window.alert('血型代號錯誤')
+            }
+        }
+
+        // 換行
+        // document.write("<br>");
+        let D2 = window.prompt('請輸入血型=.switch語法');
+        // D2 = D2.toLocaleUpperCase()
+        // D = D.toLowerCase();//資料轉小寫
+        // D = D.toLocaleUpperCase();//資料轉大寫
+        switch (D2.trim().toLocaleUpperCase()) {
+            case null:
+                document.write('您按了取消');
+                break;
+            case '':
+                document.write('請輸入資料');
+                break;
+            case " ":
+                document.write('不能空白');
+                break;
+            // case 'a':
+            //     document.write('A型');
+            //     break;
+            // case 'b':
+            //     document.write('B型');
+            //     break;
+            // case 'o':
+            //     document.write('O型');
+            //     break;
+            // case 'ab':
+            //     document.write('AB型');
+            //     break;
+            case 'A':
+                document.write('A型');
+                break;
+            case 'B':
+                document.write('B型');
+                break;
+            case 'O':
+                document.write('O型');
+                break;
+            case 'AB':
+                document.write('AB型');
+                break;
+            default://以上都不是正常血型
+                document.write('血型代號錯誤');
+                break;
+
+        }
+    </script>
+</body>
+
+</html>
