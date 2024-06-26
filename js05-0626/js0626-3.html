@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // EX7:
+        // 彈出輸入視窗=>prompt()
+        // 輸入運算起始值=>1
+        // 輸入運算結束值=>10
+        // 算出奇數合=>25
+        // 算出偶數合=>30
+
+
+        let a = Number(window.prompt('輸入起始值'));//輸入進來的資料是字串不是數值
+        let aa = '';//裝加總的過程
+        let aaa = 0;//裝加總結束的資料
+
+        let bb = '';//裝加總的過程
+        let bbb = 0;//裝加總結束的資料
+        let b = Number(window.prompt('輸入結束值'));//輸入進來的資料是字串不是數值
+        // let bb=b;
+        if (a > b) {
+            let tmp = a;//把a給tmp
+            a = b;//把b給a
+            b = tmp;//把tmp給b
+        }
+
+
+        for (i = a; i <= b; i++) {
+            if (i % 2 === 0) {
+                // aa = a + i;
+                aaa = aaa + i;
+                aa = aa + i;
+                if (i != 10) {
+                    aa = aa + '+';
+                }
+                // '2+'
+                // aa = aa + i + "+";
+                // if (i != b) {
+                //     a = a + i;
+                // }
+                // aaa = aaa + i;
+            } else if (i % 2 === 1) {
+                bbb = bbb + i;
+
+                // bb = bb + i + '+';
+                // if (i != b) {
+                //     b = b + i;
+                // }
+                // bbb = bbb + i;
+            }
+
+        }//else if(i!=){}
+
+        document.write(`1-10中偶數的有=>${aa}<br>`);
+        document.write(`1-10中偶數的有=>${aaa}<br>`);
+        document.write(`1-10中奇數的有=>${bb}<br>`);
+        document.write(`1-10中奇數的有=>${bbb}<br>`);
+
+
+
+        /*
+        //狀況一：起始值<結束值
+                let sNum = prompt('起始值');
+                sNum = Number(sNum);
+                let eNum = prompt('結束值');
+                eNum = Number(eNum);
+        
+                //奇數合
+                let tot1 = 0;
+                //偶數合
+                let tot2 = 0;
+        
+        
+                // 起始值>結束值
+                for (let i = sNum; i <= eNum; i++) {
+                    if (i % 2 === 0) {
+                        //奇數
+                        tot1 = tot1 + i;
+                    } else tot2 = tot2 + i;
+                }
+                console.log(`${sNum}-${eNum}的奇數合=>${tot1}`);
+                console.log(`${sNum}-${eNum}的偶數合=>${tot2}`);
+        
+        */
+
+        /*
+        
+        // 狀況二：起始值>結束值
+        
+        let sNum = prompt('起始值');
+                sNum = Number(sNum);
+                let eNum = prompt('結束值');
+                eNum = Number(eNum);
+        
+        //調換用tmp轉接後，再轉交出去
+        if(sNum>eNum){
+            let tmp=sNum;//把sNum給tmp
+            sNum=eNum;//把eNum給sNum
+            eNum=tmp;//把tmp給eNum
+        }
+        
+                //奇數合
+                let tot1 = 0;
+                //偶數合
+                let tot2 = 0;
+        
+        
+                // 起始值>結束值
+                for (let i = sNum; i <= eNum; i++) {
+                    if (i % 2 === 0) {
+                        //奇數
+                        tot1 = tot1 + i;
+                    } else tot2 = tot2 + i;
+                }
+                console.log(`${sNum}-${eNum}的奇數合=>${tot1}`);
+                console.log(`${sNum}-${eNum}的偶數合=>${tot2}`);
+        
+                */
+
+    </script>
+</body>
+
+</html>

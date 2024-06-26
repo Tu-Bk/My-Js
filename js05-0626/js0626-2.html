@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // EX6.請用一個迴圈，找出1-10中，顯示下列結果
+        // 寫迴圈找出3跟5的倍數
+        // 各別保存起來(串接)
+        // 迴圈結束後在顯示結果
+        
+        // 1-10中3的倍數有：3、6、9
+        // 1-10中3的倍數合計為：3+6+9=18
+        // 1-10中5的倍數有：5、10
+        // 1-10中5的倍數合計為：5+10=15
+
+        //連續兩個單引號或雙引號，表示空字串(連空白都沒有)
+        let str3 = ''; //存放3的倍數(串接)
+        let srt3b = '';//加總計算(計算過程)
+        let tot3 = 0; //存放3的倍數合計
+
+        let str5 = '';//存放5的倍數(串接)
+        let srt5b = '';//加總計算(計算過程)
+        let tot5 = 0; //存放5的倍數合計
+
+        for (let i = 1; i <= 10; i++) {
+            // 找出3的倍數
+            if (i % 3 === 0) {
+                // str3 = str3 + i + " ";    //各別保存起來(串接)
+                // str3 += i + " ";    //簡化程式
+                str3 = str3 + i + ' '; //個別保存起來(串接369)
+                srt3b = srt3b + i;
+                if (i != 9) {
+                    srt3b = srt3b + "+";   //不是9的時候，才加上+
+                }
+                // 累計3的倍數
+                tot3 = tot3 + i;
+
+            } else if (i % 5 === 0) {
+                // 找出5的倍數
+                // str5 = str5 + i + " ";    //各別保存起來(串接)
+                // str5 += i + " ";    //簡化程式
+                str5 = str5 + i + ' '; //個別保存起來(串接369)
+                srt5b = srt5b + i;
+                if (i != 10) {
+                    srt5b = srt5b + "+";//不是10的時候，才加上+
+                } tot5 = tot5 + i;
+
+            }
+        }
+        // 迴圈結束後在顯示結果
+        // 反引號中的變數要用${變數名}包起來
+        document.write(`1-10中3的倍數有=>${str3}<br>`);//字串字面值寫法，使用反引號
+        document.write(`1-10中3的倍數合計為：${srt3b}<br>`)
+        document.write(`1-10中3的倍數合計為：${tot3}<br>`)
+        // document.write(`1-10中5的倍數=>${str5}<br>`);
+        document.write('1-10中5的倍數有=>' + str5 + '<br>');//一班串接方法，使用單引號或雙引號串接
+        document.write(`1-10中5的倍數合計為：${srt5b}<br>`)
+        document.write(`1-10中3的倍數合計為：${tot5}<br>`)
+    </script>
+</body>
+
+</html>
