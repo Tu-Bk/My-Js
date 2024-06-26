@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>猜數字</title>
+</head>
+
+<body>
+    <script>
+        /*
+        內定一個數字結果 => let bingoNum = 99
+        彈出輸入視窗，輸入數字
+        最多能夠猜3次
+        --
+        三次內答對，顯示結果如下
+        第1次：11
+        第2次：99
+        答對了
+        --
+        三次內答錯，顯示結果如下
+        第1次：11
+        第2次：88
+        第3次：66
+        挑戰失敗
+        
+        */
+
+        let a = Number(window.prompt('請輸入數字'));
+        let b = Number(window.prompt('請輸入數字'));
+        let c = Number(window.prompt('請輸入數字'));
+
+        for (i = 1; i <= 1; i++) {
+            if (a == 99) {
+                document.write('第一次:' + a + "<br>");
+                document.write('你答對了');
+                break;
+            } else if (b == 99) {
+                document.write('第一次:' + a + "<br>");
+                document.write('第二次:' + b + "<br>");
+                document.write('你答對了');
+                break;
+            } else if (c == 99) {
+                document.write('第一次:' + a + "<br>");
+                document.write('第二次:' + b + "<br>");
+                document.write('第三次:' + c + "<br>");
+                document.write('你答對了');
+                break;
+            } else if (a != 99 || b != 99 || C != 99) {
+                document.write('第一次:' + a + "<br>");
+                document.write('第二次:' + b + "<br>");
+                document.write('第二次:' + c + "<br>");
+                document.write('挑戰失敗');
+            }break;
+                    }
+
+        // for (i = 1; i <= 1; i++) {
+        //     if (a != 99 || b != 99 || C != 99) {
+        //         document.write('第一次:' + a + "<br>");
+        //         document.write('第二次:' + b + "<br>");
+        //         document.write('第二次:' + c + "<br>");
+        //     } document.write('挑戰失敗')
+        // }
+
+
+
+                // for (i = 1; i <= 1; i++) {
+        //     if (a != 99 || b != 99 || C != 99) {
+        //         document.write('第一次:' + a + "<br>");
+        //         document.write('第一次:' + b + "<br>");
+        //         document.write('第一次:' + c + "<br>");
+        //         document.write('挑戰失敗')
+        //     } else if (a == 99 || b == 99 || C == 99) {
+        //         document.write('第一次:' + a + "<br>")
+        //         document.write('第一次:' + b + "<br>");
+        //         document.write('第一次:' + c + "<br>");
+        //         document.write('你答對了')
+        //     }
+        // }
+
+    </script>
+</body>
+
+</html>
