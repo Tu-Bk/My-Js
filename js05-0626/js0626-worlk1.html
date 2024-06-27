@@ -27,33 +27,46 @@
         
         */
 
+
+        // let b = Number(window.prompt('請輸入數字'));
+        // // let c = Number(window.prompt('請輸入數字'));
+        // for (let i = 1; i <= 3; i++) {
+        //     let a = Number(window.prompt('請輸入數字'));
+        //     if (a == 99) {
+        //         //right
+        //         break;
+        //     } else {
+        //         //wrong
+        //     }
+        // }
+
+
+        // let b = Number(window.prompt('請輸入數字'));
+        // let C = Number(window.prompt('請輸入數字'));
+
+
         let a = Number(window.prompt('請輸入數字'));
         let b = Number(window.prompt('請輸入數字'));
         let c = Number(window.prompt('請輸入數字'));
+        if (a == 99) {
+            document.write('第一次:' + a + "<br>");
+            document.write('你答對了');
+        } else if (b == 99) {
+            document.write('第一次:' + a + "<br>");
+            document.write('第二次:' + b + "<br>");
+            document.write('你答對了');
+        } else if (c == 99) {
+            document.write('第一次:' + a + "<br>");
+            document.write('第二次:' + b + "<br>");
+            document.write('第三次:' + c + "<br>");
+            document.write('你答對了');
+        } else if (a != 99 || b != 99 || c != 99) {
+            document.write('第一次:' + a + "<br>");
+            document.write('第二次:' + b + "<br>");
+            document.write('第三次:' + c + "<br>");
+            document.write('挑戰失敗');
+        }
 
-        for (i = 1; i <= 1; i++) {
-            if (a == 99) {
-                document.write('第一次:' + a + "<br>");
-                document.write('你答對了');
-                break;
-            } else if (b == 99) {
-                document.write('第一次:' + a + "<br>");
-                document.write('第二次:' + b + "<br>");
-                document.write('你答對了');
-                break;
-            } else if (c == 99) {
-                document.write('第一次:' + a + "<br>");
-                document.write('第二次:' + b + "<br>");
-                document.write('第三次:' + c + "<br>");
-                document.write('你答對了');
-                break;
-            } else if (a != 99 || b != 99 || C != 99) {
-                document.write('第一次:' + a + "<br>");
-                document.write('第二次:' + b + "<br>");
-                document.write('第二次:' + c + "<br>");
-                document.write('挑戰失敗');
-            }break;
-                    }
 
         // for (i = 1; i <= 1; i++) {
         //     if (a != 99 || b != 99 || C != 99) {
@@ -65,7 +78,7 @@
 
 
 
-                // for (i = 1; i <= 1; i++) {
+        // for (i = 1; i <= 1; i++) {
         //     if (a != 99 || b != 99 || C != 99) {
         //         document.write('第一次:' + a + "<br>");
         //         document.write('第一次:' + b + "<br>");
