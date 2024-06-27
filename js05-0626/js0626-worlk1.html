@@ -45,27 +45,35 @@
         // let C = Number(window.prompt('請輸入數字'));
 
 
-        let a = Number(window.prompt('請輸入數字'));
-        let b = Number(window.prompt('請輸入數字'));
-        let c = Number(window.prompt('請輸入數字'));
-        if (a == 99) {
-            document.write('第一次:' + a + "<br>");
-            document.write('你答對了');
-        } else if (b == 99) {
-            document.write('第一次:' + a + "<br>");
-            document.write('第二次:' + b + "<br>");
-            document.write('你答對了');
-        } else if (c == 99) {
-            document.write('第一次:' + a + "<br>");
-            document.write('第二次:' + b + "<br>");
-            document.write('第三次:' + c + "<br>");
-            document.write('你答對了');
-        } else if (a != 99 || b != 99 || c != 99) {
-            document.write('第一次:' + a + "<br>");
-            document.write('第二次:' + b + "<br>");
-            document.write('第三次:' + c + "<br>");
-            document.write('挑戰失敗');
+
+        for (i = 1; i <= 3; i++) {
+            let a = Number(window.prompt('請輸入數字'));
+            // let b = Number(window.prompt('請輸入數字'));
+            // let c = Number(window.prompt('請輸入數字'));
+            if (a == 99) {
+                document.write('第' + i + '次:' + a + "<br>");
+                document.write('你答對了');
+                break;
+                // } else if (b == 99) {
+                //     document.write('第一次:' + a + "<br>");
+                //     document.write('第二次:' + b + "<br>");
+                //     document.write('你答對了');
+                // } else if (c == 99) {
+                //     document.write('第一次:' + a + "<br>");
+                //     document.write('第二次:' + b + "<br>");
+                //     document.write('第三次:' + c + "<br>");
+                //     document.write('你答對了');
+            } else if (i == 1) {
+                document.write('第一次: ' + a + "<br>");
+            } else if (i == 2) {
+                document.write('第二次: ' + a + "<br>");
+            } else if (i == 3) {
+                document.write('第三次: ' + a + "<br>");
+                document.write('挑戰失敗');
+            }
         }
+
+
 
 
         // for (i = 1; i <= 1; i++) {
@@ -91,6 +99,9 @@
         //         document.write('你答對了')
         //     }
         // }
+
+
+
 
     </script>
 </body>
