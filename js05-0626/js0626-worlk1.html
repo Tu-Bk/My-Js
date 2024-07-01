@@ -51,9 +51,10 @@
             // let b = Number(window.prompt('請輸入數字'));
             // let c = Number(window.prompt('請輸入數字'));
             if (a == 99) {
-                document.write('第' + i + '次:' + a + "<br>");
+                // document.write('第' + i + '次:' + a + "<br>");
+                document.write(`第${i}次:${a}<br>`);/*盡可能使用『``反引號』來做編寫*/
                 document.write('你答對了');
-                break;
+                break;//答對的話，會中斷迴圈，並跳出迴圈;如果沒有答對會繼續else迴圈。
                 // } else if (b == 99) {
                 //     document.write('第一次:' + a + "<br>");
                 //     document.write('第二次:' + b + "<br>");
@@ -63,15 +64,17 @@
                 //     document.write('第二次:' + b + "<br>");
                 //     document.write('第三次:' + c + "<br>");
                 //     document.write('你答對了');
-            } else if (i == 1) {
-                document.write('第一次: ' + a + "<br>");
-            } else if (i == 2) {
-                document.write('第二次: ' + a + "<br>");
-            } else if (i == 3) {
-                document.write('第三次: ' + a + "<br>");
-                document.write('挑戰失敗');
+                } else if (i == 1) {
+                    document.write('第一次: ' + a + "<br>");
+                } else if (i == 2) {
+                    document.write('第二次: ' + a + "<br>");
+                } else if (i == 3) {
+                    document.write('第三次: ' + a + "<br>");
+                    document.write('挑戰失敗');
             }
-        }
+
+            }
+
 
 
 

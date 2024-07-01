@@ -18,6 +18,8 @@
         *****
         
         */
+
+        /*
         let a = '';
         for (let i = 1; i <= 5; i++) {
             if (i != 0) {
@@ -26,6 +28,71 @@
             }
             document.write('<br>');
         }
+
+        */
+
+        /*
+        
+        // 另一種方式
+        for(i=1;i<=5;i++){
+            for(j=1;j<=i;j++){
+                document.write('*');
+            }//for j迴圈
+            document.write('<br>');
+        }//for i迴圈
+        
+        */
+
+        /*
+        邏輯概念
+        i=1
+        j=1 j<=1
+        顯示一個*
+        *
+        
+        i=2
+        j=1 j<=2
+        顯示一個*後因j不=2所以再次執行一次迴圈，在顯示一個*
+        
+        i=3
+        j=1 j<=3
+        顯示一個*後因j不=3所以再次執行一次迴圈，在顯示一個*後因j不=3所以再次執行一次迴圈，在顯示一個*
+        ***
+        
+        */
+
+
+        //顯示1-5的*
+        for (i = 1; i <= 5; i++) {
+            for (j = 1; j <= i; j++) {
+                document.write('*');
+            }//for j迴圈
+            document.write('<br>');
+        }
+        document.write('<br>');
+
+        //在顯示5-1的*
+        for (let a = 5; a >= 1; a--) {
+            for (let b = 1; b <= a; b++) {
+                document.write('*');
+            }//for b迴圈
+            document.write('<br>');
+        }//for a迴圈
+
+        // 撰寫迴圈時，要避免無窮迴圈(無法結束迴圈的狀態)
+        //在抬頭的logo顯示不斷轉圈圈就代表進入無窮迴圈
+
+
+
+        //     for(i=1;i<=5;i++){
+        //     for(j=1;j<=i;j++){
+        //         document.write('*');
+        //     }//for j迴圈
+        //     document.write('<br>');
+        // }//for i迴圈
+        //for i迴圈
+
+
 
     </script>
 

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 字串設定為空字串(範例) let a='';
+        //1-10合計
+        //設定合計變數
+        //先檢查後執行
+
+        /*
+        //使用for迴圈
+
+        let a = 0;
+        for (i = 1; i <= 10; i++) {
+            a = a + i;
+            document.write(`i=${i};a=${a}`);
+            document.write('<br>');
+            // 寫在回圈內，是顯示每次執行的結果
+        }
+        document.write('<br>');
+        document.write(`i=${i};a=${a}`);
+        // 寫在迴圈外，是顯示最終的結果
+*/
+        /*
+        a=0
+        i=1
+        a=a+i顯示0+1=1
+
+        i=2
+        a=a+1顯示1+2=3
+
+        i=3
+        a=a+1顯示3+3=6
+
+
+        */
+
+
+        //1-10合計=>使用while
+        //合計變數
+        //先檢查後執行
+        let b = 0;
+        let i = 1;
+        while (i <= 10/*只能寫條件*/) {
+            /*while的{}是執行的動作*/
+            b = b + i;
+            /*執行後的附加必定條件*/
+            i++/*先加總後顯示*/
+            document.write(`i=${i};b=${b}<br>`);
+            document.write('<br>');
+            // i++/*先顯示後加總*/
+        } document.write('<br>');
+        document.write(`i=${i};b=${b}<br>`);
+
+
+
+    </script>
+
+</body>
+
+</html>
