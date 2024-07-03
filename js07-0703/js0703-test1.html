@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 設計一個函式，能夠四則運算
+        function calc(a, b, c) {
+            // 處理四則運算的結果
+            if (c == "+") {
+                document.write(`${a}+${b}=${a + b}`);
+            }
+            else if (c == "-") {
+                document.write(`${a}-${b}=${a - b}`);
+            }
+            else if (c == "*") {
+                document.write(`${a}*${b}=${a * b}`);
+            }
+            else if (c == "/") {
+                document.write(`${a}/${b}=${(a / b).toFixed(2)}`);
+            } else {
+                document.write('運算符號不存在')
+            }
+        }
+        // 使用輸入式窗產生任意兩數與運算式符號
+        // 最後再呼叫函式
+        // 處理排除下列狀況
+        // 1.非數值 =>isNan()
+        // 2.多餘空白 =>trim()
+        // 3.取消狀況 =>null
+        // 最後字串轉數值
+        let a = window.prompt('請輸入a函數');//輸入的資料是字串，要轉數值才能計算
+        let b = window.prompt('請輸入b函數');//輸入的資料是字串，要轉數值才能計算
+        let c = window.prompt('請輸入c函數');//(- * /)會自動轉換，+會偵測是否使用字串
+        if (a == null || b == null || c == null) {
+            document.write('你按了取消');
+        } else if (isNaN(a) || isNaN(b)) {
+            // isNaN => is Not a Number
+            document.write('輸入資料有誤');
+        } else {
+            a = Number(a.trim());//trim是去除多餘空白，但只限於字串
+            b = Number(b.trim());
+            calc(a, b, c);//要跟function calc(a, b, c)順序一致，不然會錯誤
+        }
+
+        /*
+                let a = Number(window.prompt('請輸入a函數'));//輸入的資料是字串，要轉數值才能計算
+                let b = Number(window.prompt('請輸入b函數'));//輸入的資料是字串，要轉數值才能計算
+        */
+
+        // let設定並輸入的資料會放到下面的calc(a, b, c)裡面
+        
+    </script>
+
+</body>
+
+</html>

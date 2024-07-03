@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 函式宣告與使用一： 無參數，無傳回值
+
+        // 建立一個打招呼的函式
+        function sayHi() {
+            // alert('Hello');
+            document.write('Hello<br>');
+            console.log('Hello');
+        }
+        // 呼叫函式=>函式名稱()
+        sayHi();
+
+        // 函式宣告與使用二： 有參數，無傳回值
+        function sayHi2(strName){
+            document.write('Hi,'+strName+'早安<br>');
+        }
+                // sayHi2('test');
+                // sayHi2('123')
+                
+                // 彈出視窗，輸入稱呼
+                // let inputName = prompt('請問怎麼稱呼');
+                let inputName =window.prompt('你叫什麼名子');
+                sayHi2(inputName);
+    </script>
+</body>
+
+</html>

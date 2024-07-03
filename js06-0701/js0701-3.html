@@ -49,6 +49,24 @@
                 }
         */
 
+
+        // do-while迴圈另外的做法
+        // 如果之前有使用tot變數時，之後要再設定只要設定tot=0;不用使用let
+        let tot = 0;
+        let i = 1; //沿用i變數，所以i=1而不是let i=1
+        do {
+            if (i % 5 === 0) {
+                tot = tot + i;
+                document.write(`i=${i} ; tot=${tot}<br>`);
+                if (tot > 50) {
+                    break;
+                }
+            } i++;
+        } while (i <= 100);
+
+
+
+
         // do-while迴圈做法
         /*
         let b = 5;
@@ -65,9 +83,8 @@
 
         */
 
-
+/*
         // do-while迴圈另列做法
-
         let b = 0;
         let i = 1;
         do {
@@ -76,12 +93,12 @@
                 document.write(`i=${i} ; b=${b}<br>`)
                 if (b > 50) {
                     break;
-                } 
+                }
             }
         } while (i <= 100);
         document.write(`i=${i} ; b=${b}<br>`)
         i++;
-
+*/
 
         /*
                 // for迴圈作法
