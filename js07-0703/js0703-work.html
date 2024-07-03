@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 猜數字：直到猜對才結束
+        // 用亂數產生一個值：60
+        // 輸入資訊顯示console.log()
+        // 第1次：50 => 太小了（提示：50-100）
+        // 第2次：90 => 太大了（提示：50-90）
+        // 第3次：80 => 太大了（提示：50-80）
+        // 第4次：55 => 太小了（提示：55-80）
+        // 第5次：60 => 猜對了
+
+        // console.log(Math.floor(Math.random()*100)); // 回傳 0 ~ 99
+        // console.log(Math.floor(Math.random()*100)+1); // 回傳 1 ~ 100
+        // 產生亂數給變數bingoNum
+        let bingoNum = Math.floor(Math.random() * 100) + 1;
+        console.log(bingoNum);
+
+        while (true) {
+            let giveNumber = window.prompt('你輸入的數值');
+            if (giveNumber == bingoNum) {
+                console.log(`你答對了,數值是${bingoNum}`);
+                break;
+            }
+            if (giveNumber == null) {
+                console.log(`數值不能不填資料`);
+                continue;
+            }
+            if (giveNumber == ''||giveNumber == ' ') {
+                console.log(`數值不能空白`);
+                continue;
+            }
+            if (giveNumber < 0 || giveNumber > 100) {
+                console.log(`輸入數值有誤，請從新輸入`);
+                console.log(`有效範圍在0-100`);
+                continue;
+            }
+            giveNumber = Number(giveNumber);
+            if (isNaN(giveNumber)) {
+                console.log(`請輸入正確數值`);
+                continue;
+            }
+            bingoNum = Number(bingoNum);
+            if (giveNumber > bingoNum) {
+                console.log(`數值${giveNumber}太大了`);
+                console.log(`提示${giveNumber}-${bingoNum}`);
+            } else {
+                console.log(`數值${giveNumber}太小了`);
+                console.log(`提示${giveNumber}-${bingoNum}`);
+            }
+
+        }
+
+
+    </script>
+</body>
+
+</html>
