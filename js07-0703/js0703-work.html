@@ -22,7 +22,9 @@
         // console.log(Math.floor(Math.random()*100)+1); // 回傳 1 ~ 100
         // 產生亂數給變數bingoNum
         let bingoNum = Math.floor(Math.random() * 100) + 1;
-        console.log(bingoNum);
+        // console.log(bingoNum);
+        let maxNumber = 0;//上限值
+        let minNumber = 0;//下限值
 
         while (true) {
             let giveNumber = window.prompt('你輸入的數值');
@@ -34,7 +36,7 @@
                 console.log(`數值不能不填資料`);
                 continue;
             }
-            if (giveNumber == ''||giveNumber == ' ') {
+            if (giveNumber == '' || giveNumber == ' ') {
                 console.log(`數值不能空白`);
                 continue;
             }
@@ -49,17 +51,28 @@
                 continue;
             }
             bingoNum = Number(bingoNum);
-            if (giveNumber > bingoNum) {
+            if (giveNumber > bingoNum) {// 30>20
                 console.log(`數值${giveNumber}太大了`);
-                console.log(`提示${giveNumber}-${bingoNum}`);
-            } else {
-                console.log(`數值${giveNumber}太小了`);
-                console.log(`提示${giveNumber}-${bingoNum}`);
+                if(giveNumber>minNumber){
+                    console.log(`提示${minNumber}-${giveNumber}`);
+                }else{console.log(`提示${giveNumber}-${minNumber}`);}
+                
             }
-
+            else {
+                console.log(`數值${giveNumber}太小了`);//20>30
+                if(giveNumber<maxNumber){
+                    console.log(`提示${giveNumber}-${maxNumber}`);
+                }else{console.log(`提示${maxNumber}-${giveNumber}`);}
+                                // 取得第一次輸入的值
+            }
+            if (maxNumber != 0) {
+                maxNumber = (maxNumber * 0) + giveNumber;
+                minNumber = (minNumber * 0) + giveNumber;
+            } else {
+                maxNumber = (maxNumber * 0) + giveNumber;
+                minNumber = (minNumber * 0) + giveNumber;
+            }
         }
-
-
     </script>
 </body>
 
