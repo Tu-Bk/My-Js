@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        //陣列 (陣列名稱:Array)
+        // 一維陣列 =>熟悉度100%，常使用
+        // 二維陣列 =>熟悉度50%，不常使用
+        // 多維陣列 =>知道即可
+        //-----------------------
+        // 每個陣列中的值都有編號(索引值)，預設從編號0開使
+        // 陣列的長度:陣列名稱.length
+        let arr1 = [50, 90, 100, 30, 60];
+        console.log('arr1陣列長度:' + arr1.length);
+        // 取出陣列值:陣列名稱[索引值]  ↓↓
+        console.log('arr1陣列編號2的值:' + arr1[2]);
+        // 更改陣列值:陣列名稱[索引值]=新值   ↓↓
+        arr1[2] = 99;
+        console.log('arr陣列編號2更改後的值' + arr1[2]);
+
+        //請使用迴圈,顯示arr1所有編號值
+        let i = 0;
+        let tot = 0;
+        while (i < arr1.length) {
+            // ---(重點)---arr1.length 要先定義資料，如果沒有定義會出現錯誤
+            console.log(arr1[i]);
+            tot = tot + arr1[i];
+            i++;
+        }
+        console.log(tot);
+
+
+        // 請找出最大值、大小值
+        //for迴圈寫法
+        //必須學會
+        let mix = arr1[0];
+        let max = arr1[0];
+        for (let i = 1; i < arr1.length; i++) {
+            if (arr1[i] > max) {
+                max = arr1[i];
+            } else if (arr1[i] < mix) {
+                mix = arr1[i]
+            }
+        }
+        console.log(`最大值${max}`)
+        console.log(`最大值${mix}`)
+
+        //while迴圈寫法
+        //while跟do while迴圈必須學會其中一個
+        while (i < arr1.length) {
+            i++
+            if (arr1[i] > max) {
+                max = arr1[i];
+            }
+            if (arr1[i] < mix) {
+                mix = arr1[i]
+            }
+        }
+        console.log(`最大值${max}`)
+        console.log(`最大值${mix}`)
+
+    </script>
+</body>
+
+</html>

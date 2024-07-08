@@ -53,20 +53,20 @@
             bingoNum = Number(bingoNum);
             if (giveNumber > bingoNum) {// 30>20
                 console.log(`數值${giveNumber}太大了`);
-                if(giveNumber>minNumber){
+                if (giveNumber > minNumber) {
                     console.log(`提示${minNumber}-${giveNumber}`);
-                }else{console.log(`提示${giveNumber}-${minNumber}`);}
-                
+                } else { console.log(`提示${giveNumber}-${minNumber}`); }
+
             }
             else {
                 console.log(`數值${giveNumber}太小了`);//20>30
-                if(giveNumber<maxNumber){
+                if (giveNumber < maxNumber) {
                     console.log(`提示${giveNumber}-${maxNumber}`);
-                }else{console.log(`提示${maxNumber}-${giveNumber}`);}
-                                // 取得第一次輸入的值
+                } else { console.log(`提示${maxNumber}-${giveNumber}`); }
+                // 取得第一次輸入的值
             }
             maxNumber = (maxNumber * 0) + giveNumber;
-                minNumber = (minNumber * 0) + giveNumber;
+            minNumber = (minNumber * 0) + giveNumber;
             // if (maxNumber != 0) {
             //     maxNumber = (maxNumber * 0) + giveNumber;
             //     minNumber = (minNumber * 0) + giveNumber;
