@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //只顯示奇數
+        //方法一
+        /*
+let arr1 = [1, 3, 5, 7, 100, 234, 666,777];
+for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] % 2 == 1) {
+        console.log(arr1[i]);
+    }
+}
+console.log(`arr1有哪些數值:${arr1}`);
+*/
+
+        //方法二
+        //陣列中保留奇數 =>filter
+        let arr1 = [1, 3, 5, 7, 100, 234, 666, 777];
+        console.log('原陣列的內容:');
+        console.log(arr1);
+        // const代表宣告的意思  oods代表給資料裝載的盒子
+
+        const odds = arr1.filter((n) => {
+            /*<== 檢查是否是奇數*/
+                if (n % 2 == 1) {
+                return true;
+            } return false
+
+            //簡化寫法
+            //return n % 2 == 1 //n=1 1%2==1 =>true
+        });
+
+        console.log('篩選後的陣列奇數內容:');
+        console.log(odds);
+        console.log('odds資料型別');
+        console.log(typeof (odds));
+        console.log('篩選後的陣列內容:');
+        console.log(arr1);
+
+
+    </script>
+</body>
+
+</html>

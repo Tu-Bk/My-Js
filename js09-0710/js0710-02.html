@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let arr1 = [100, 30, 99, 10, 3];
+        //目前無排序
+        console.log('排序前' + arr1);
+        //遞增排序使用.sort
+        //已使用排序
+        // arr1.sort();
+        // console.log('排序後'+arr1);
+
+
+        // 遞增效果     //使用
+        arr1.sort((a, b) => {
+            return a - b; //這裡的-代表a到b   // 遞增效果
+        });
+        console.log('使用sort遞增排序後' + arr1);
+
+
+        // 遞減效果
+        arr1.sort((a, b) => {
+            return b - a; //這裡的-代表a到b   // 遞減效果
+        });
+        console.log('使用sort遞減排序後' + arr1);
+
+
+        //另外的遞減方法，使用.reverse來遞減排序
+        arr1.reverse();
+        console.log('使用reverse遞減上一次排序後的排序' + arr1);
+
+        //先遞減後立即遞增
+        arr1.sort((a, b) => {
+            return a - b; //這裡的-代表a到b   // 遞增效果
+        });
+        console.log('使用sort遞增排序後' + arr1);
+        arr1.sort((a,b)=>{
+            return b-a;
+        });
+        console.log('遞增後立刻遞減排序' + arr1);
+
+
+
+    </script>
+</body>
+
+</html>
