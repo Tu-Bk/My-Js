@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*顯示陣列中的所有值*/
+        /*顯示陣列中的所有值*/
+        /*顯示陣列中的所有值*/
+        /*顯示陣列中的所有值*/
+        /*顯示陣列中的所有值*/
+        let arr = [1, 2, 3, 4, 5, '12345'];
+        // for
+        // map
+        // for of
+        // forEach
+
+
+        // for
+        console.log('---for----');
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+
+        //for of
+        console.log('---for of----');
+        for (let n of arr) {
+            console.log(n);
+        }
+
+        //forEach
+        console.log('---forEach----');
+        arr.forEach((n) => {
+            console.log(n);
+        });
+
+        //map
+        console.log('---map----');
+        let Allb = arr.map((n) => {
+            return n;
+        })
+        console.log(Allb);
+
+        // 顯示陣列中字串的值
+        // typeof()=>檢查資料型別=>String
+        // typeof是檢查提供給他的資料的型別   -----typeof可以放在()裡面的最前面
+        // for
+        // map
+        // for of
+        // forEach
+        console.log('---↓↓測驗↓↓----');
+        // for
+        console.log('---for----');
+        for (i = 0; i < arr.length; i++) {
+            if (typeof (arr[i]) === 'string') {
+                console.log(arr[i]);
+            }
+        }
+        console.log('---for of----');
+        for (let n of arr)
+            if (typeof (n) === 'string') {
+                console.log(n);
+            }
+        //forEach
+        console.log('---forEach----');
+        arr.forEach((n) => {
+            if (typeof (n) === 'string') {
+                console.log(n);
+            }
+        });
+        //map
+        console.log('---map----');
+        let Allc = arr.map((n) => {
+            if (typeof (n) === 'string') {
+                console.log(n);
+                return n;
+            }
+        })
+    </script>
+
+</body>
+
+</html>

@@ -31,12 +31,16 @@ console.log(`arr1有哪些數值:${arr1}`);
 
         const odds = arr1.filter((n) => {
             /*<== 檢查是否是奇數*/
-                if (n % 2 == 1) {
+            if (n % 2 == 1) {
                 return true;
             } return false
 
             //簡化寫法
+            //let odds =arr2.filter((n)=>{
             //return n % 2 == 1 //n=1 1%2==1 =>true
+
+            //再簡化
+            //let odds = arr2.filter((n)=>n%2==1);
         });
 
         console.log('篩選後的陣列奇數內容:');
@@ -46,7 +50,23 @@ console.log(`arr1有哪些數值:${arr1}`);
         console.log('篩選後的陣列內容:');
         console.log(arr1);
 
+        // CallbackFn =>匿名函式
 
+        // CallbackFn =>箭頭函式
+        let odds2 = arr1.filter((n) => {
+            if (n % 2 == 1) {
+                return true;
+            } return false;
+        });
+
+        // function filter(cbfunc){
+        //     let result=[];
+        //     if(cbfunc){
+        //         把資料放到result
+        //     }
+        //     return result;
+        // }
+        console.log(odds2);
     </script>
 </body>
 
