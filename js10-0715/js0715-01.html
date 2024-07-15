@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        //取得亂數 =>取得0-1之間的數值
+        // console.log(Math.random());
+        let r1 = Math.random();
+        console.log(r1);
+
+        //小數兩位(↓↓使用取的小數方法↓↓)=> .toFixed
+        //Number =>會保存小數點資料
+        console.log(Number(r1.toFixed(2)));
+        //parseInt() =>不會保存小數點資料
+        console.log(parseInt(r1.toFixed(2)));
+
+        //取的小數兩位(↓↓沒有使用取的小數方法↓↓)
+        //取的小數兩位
+        //1.先乘100
+        console.log(r1 * 100);
+        //2.去除小數點後的數值(無條件捨去小數點)
+        console.log(Math.floor(r1 * 100)); //floor是無條件捨去進位
+        //3.除以100取得小數第二位數值
+        console.log(Math.floor(r1 * 100) / 100);
+        */
+
+
+        //找出亂數1-5任一數值
+        // let r2 = Math.random();
+        // console.log(r2);
+        // console.log(r2 * 5);
+        // console.log((r2 * 5) + 1);
+        // console.log('亂數值：' + Math.floor((r2 * 5) + 1));
+        let r2 = Math.floor((Math.random()*5)+1);
+        console.log('亂數值:' + r2);
+
+
+        //宣告一個陣列
+        let arr1 = [1, 100, 50, 3, 5]
+        console.log('原陣列的值:'+arr1)
+        //方法一： .indexOf(itme)
+        //不存在顯示-1  存在則顯示對應編號.
+        //尋找陣列中是否純在1-5的數值
+        console.log('亂數值：' + Math.floor(r2));
+        let result = arr1.indexOf(Math.floor(r2));
+        console.log('陣列中尋找到的結果indexOf:' + result);
+        //陣列若沒有找到亂數值則加入陣列 Push()
+        // if (result == -1) {
+        //     // arr1.push(Math.floor(r2 * 5) + 1);
+        //     arr1.push(r2);
+        //             }
+        //             console.log("新陣列的值:"+arr1);
+
+        //方法二:includes(itme)
+        //存在 =>true
+        //不存在 =>false
+        let result2 = arr1.includes(Math.floor(r2)) ;
+        console.log('陣列中尋找到的結果includes:' + result2);
+        if (result2 == false) {
+            // arr1.push(Math.floor(r2 * 5) + 1)
+            arr1.push(r2);
+        }
+        console.log(arr1);
+
+
+    </script>
+</body>
+
+</html>
