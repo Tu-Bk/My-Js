@@ -32,53 +32,80 @@
         };
 
 
-//呼叫物件
-//使用成員運算子
-console.log(user.name);
-console.log(user.age);
-user.sayHi();
-//使用中括號，取得物件屬性
-console.log(user['name']);
+        //呼叫物件
+        //使用成員運算子
+        console.log(user.name);
+        console.log(user.age);
+        user.sayHi();
+        //使用中括號，取得物件屬性
+        console.log(user['name']);
+
+        //修改物件中的年齡屬性
+        user.age = 10;
+        console.log(user.age);
+
+        //刪除物件中的屬性
+        delete user.age
+        console.log(user.age);
 
 
 
+        //建立物件方法二:建構子(new)
+        //1.使用new建立一個空物件object
+        let mobile = new Object();
+        //在建立屬性或方法
+        //建立品牌屬性
+        mobile.brand='iPhone';
+        //建立顏色屬性
+        mobile.coolr='block';
+        //建立尺寸屬性
+        mobile.size='14';
+        //建立方法
+        mobile.showMsg=function(){
+            console.log(`品牌:${this.brand},顏色:${this.color},尺寸:${this.size}`);
+            // return`品牌:${this.brand},顏色:${this.coolr},尺寸:${this.size}`;
+        }
+
+        //呼叫物件屬性
+console.log(mobile.brand);
+
+        //呼叫物件方法   對應console.log的做法
+mobile.showMsg();
+
+//呼叫物件方法(有傳回值)  對應return的作法
+// console.log(mobile.showMsg());
 
 
 
+        // 汽車物件
+        let cat = {
+            //品牌
+            //Logo
+            //價格
+            //款式
+            //色彩
+            //....
+        };
+
+        //筆電物件
+        let notebook = {
+            //品牌
+            //顏色
+            //規格
+            //價格
+        };
+
+        //手機務健
+        let mobile2 = {
+            //品牌
+            //尺寸
+            //顏色
+            //價格
+            //規格
+            //
+        }
 
 
-
-
-// 汽車物件
-let cat={
-//品牌
-//Logo
-//價格
-//款式
-//色彩
-//....
-};
-
-//筆電物件
-let notebook={
-    //品牌
-    //顏色
-    //規格
-    //價格
-};
-
-//手機務健
-let mobile={
-    //品牌
-    //尺寸
-    //顏色
-    //價格
-    //規格
-    //
-}
-
-
-        //方法二:建構子
     </script>
 
 </body>
