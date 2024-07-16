@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+        // for迴圈解法
+        let arrNum = [];
+        /* for(let i=0; i<6;i++){
+            //取亂數
+            let lotNum=Math.floor(Math.random()*49)+1;
+            // 檢查陣列資料是否存在此號碼
+            if(arrNum.indexOf(lotNum)==-1){
+                //沒有重複，則加入陣列
+                arrNum.push(lotNum);
+            }else{
+                //有重複
+                console.log(`在編號${i}位置，${lotNum}重複了`);
+                i=i-1;//因為有重複，所以要減一，不然會少數字
+            }
+        }
+        console.log(arrNum);
+        //取亂數特別號
+        let sepNum = Math.floor(Math.random() * 49) + 1;
+        console.log('特別號:' + sepNum);
+
+         */
+
+
+
+        // while迴圈解碼
+        // let i = 0;
+        // while (i < 6) {
+        //     //取亂數
+        //     let lotNum = Math.floor(Math.random() * 49) + 1;
+        //     // 檢查陣列資料是否存在此號碼
+        //     if (arrNum.indexOf(lotNum) == -1) {
+        //         //沒有重複，則加入陣列
+        //         arrNum.push(lotNum);
+        //         i++;
+        //     } else {
+        //         //有重複
+        //         console.log(`在編號${i}位置，${lotNum}重複了`);
+        //         //i = i - 1; while沒有在最一開始的位置i++，所以這裡不用加入
+        // }
+        // }
+        // console.log(arrNum);
+        //取亂數特別號
+        // let sepNum = Math.floor(Math.random() * 49) + 1;
+        // console.log('特別號:' + sepNum);
+
+
+        let i = 0;
+        // do-while迴圈解碼
+        do {
+            let lotNum = Math.floor(Math.random() * 49) + 1;
+            // 檢查陣列資料是否存在此號碼
+            if (arrNum.indexOf(lotNum) == -1) {
+                //沒有重複，則加入陣列
+                arrNum.push(lotNum);
+                i++;
+            }
+        } while (i < 6);
+        console.log('排序前:' + arrNum);
+        arrNum.sort((a, b) => {
+            return a - b;
+        });
+        console.log('排序後:' + arrNum)
+
+        //取亂數特別號
+        let sepNum = Math.floor(Math.random() * 49) + 1;
+        console.log('特別號:' + sepNum);
+
+</script>
+</body>
+</html>

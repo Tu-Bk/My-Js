@@ -9,33 +9,16 @@
 
 <body>
     <script>
-        let arr1 = [23]
-        console.log('陣列數' + arr1);
-        // let Cpj = Math.floor(Math.random() * 100);
+        // let arr1 = [23]
+        // console.log('陣列數' + arr1);
+        // let Cpj = Math.floor(Math.random() * F100);
         // let a = arr1.indexOf(Math.floor(Cpj));
         // console.log('indexOF值' + a);
         // console.log('隨機號碼' + Cpj);
 
-
-        /*         
-                let i = 0;
-                while (i < 5) {
-                    let c = Math.floor(Math.random() * 50);
-                    let result=arr1.indexOf(c);
-                    if(result == -1){
-                    console.log(result);
-                    console.log('新創數值' + c);
-                    arr1.push(c);
-                    i++;}
-                }
-        
-                arr1.sort((a, b) => a - b);
-                // console.log(arr1);
-                console.log('已塞入的號' + arr1);
-        
-         */
-
-        const abc = arr1 => {
+        //我自己寫的作法
+        let i = 0;
+        while (i < 5) {
             let c = Math.floor(Math.random() * 50);
             let result = arr1.indexOf(c);
             if (result == -1) {
@@ -45,8 +28,27 @@
                 i++;
             }
         }
-        console.log(abc);
 
+        arr1.sort((a, b) => a - b);
+        // console.log(arr1);
+        console.log('已塞入的號' + arr1);
+
+
+
+        /*
+        // 我自己寫的錯誤函數解法
+                 const abc = arr1 => {
+                    let c = Math.floor(Math.random() * 50);
+                    let result = arr1.indexOf(c);
+                    if (result == -1) {
+                        console.log(result);
+                        console.log('新創數值' + c);
+                        arr1.push(c);
+                        i++;
+                    }
+                }
+                console.log(abc);
+         */
 
 
     </script>

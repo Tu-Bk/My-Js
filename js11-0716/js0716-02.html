@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //建立函式的時機點
+        //被動執行  function Name(){....}
+
+        //立即執行
+        //匿名函式=>funciton(){...}
+        //箭頭函式=>  ()=>{.....}
+
+
+
+
+        //大樂透 =>第一區1-49號挑6個號碼+第二區1-49號挑一個出來
+        //威力採 =>第一區1-38號挑6個號碼+第二區1-8號挑一個出來
+        //今彩539=>第一區1-39號挑5個號碼
+
+        //大樂透函數解法
+        function getRandNum(max) {
+            return Math.floor(Math.random() *max) + 1;
+        }
+
+
+        function getLotNum() {
+            let arrNum = [];
+            let i = 0;
+            while (i < 6) {
+                //先取亂數
+                let lotNum = getRandNum(49);
+                // 檢查陣列資料是否存在此號碼
+                if (arrNum.indexOf(lotNum) == -1) {
+                    //沒有重複，則加入陣列
+                    arrNum.push(lotNum);
+                    i++;
+                } else {
+                    //有重複
+                    console.log(`在編號${i}位置，${lotNum}重複了`);
+                    //i = i - 1; while沒有在最一開始的位置i++，所以這裡不用加入
+                }
+            }
+            console.log('大樂透:'+arrNum);
+            // 取亂數特別號
+            let sepNum = getRandNum(49);
+            console.log('大樂透特別號:' + sepNum);
+        }
+        // getLotNum();
+
+
+        // // 威力彩函數解法
+        function b(max) {
+            return Math.floor(Math.random() * max) + 1
+        };
+        function c(max) {
+            return Math.floor(Math.random() * max) + 1;
+        };
+
+        function b1() {
+            let i = 0;
+            let arr1 = [];
+            while (i < 6) {
+                let totb = b(38);
+                if (arr1.indexOf(totb) == -1) {
+                    arr1.push(totb);
+                    i++;
+                }
+            }
+            arr1.sort((a,b)=>{return a-b});
+            console.log('威力彩第一區號碼:'+arr1);
+            // b1();
+        let Numc = c(8);
+        console.log('威力彩第二區號碼:'+Numc);
+        // c();
+        }
+        
+
+
+        //今彩539函數解法
+        function T(max) {
+            return Math.floor(Math.random() * max) + 1;
+        }
+
+        function to() {
+            let i = 0;
+            let arr2 = [];
+            while (i < 5) {
+                let to1 = T(39);
+                if (arr2.indexOf(to1) == -1) {
+                    arr2.push(to1);
+                    i++;
+                }
+            }
+            arr2.sort((a, b) => { return a - b });
+            console.log('今彩539:'+arr2);
+        }
+
+        // to();
+
+
+
+        //跳脫字元符號 => \n  =>換行的意思
+        let lotGameNo = prompt('請輸入樂透號碼代號=>\n1.大樂透 2.威力彩 3.今彩539');
+        //產生樂透號碼
+        switch(lotGameNo){
+            case '1':
+                //產生大樂透號碼
+                getLotNum();
+                break;
+                case '2':
+                //產生大樂透號碼
+                b1();
+                c();
+                break;
+                case '3':
+                //產生大樂透號碼
+                to();
+                break;
+                default:
+                    console.log('err!代號輸入錯誤');
+        }
+
+
+    </script>
+</body>
+
+</html>

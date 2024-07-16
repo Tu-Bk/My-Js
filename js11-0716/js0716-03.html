@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //建立函式的時機點
+        //被動執行  function Name(){....}
+
+        //立即執行
+        //匿名函式=>funciton(){...}
+        //箭頭函式=>  ()=>{.....}
+
+
+
+        //題目↓↓
+        //大樂透 =>第一區1-49號挑6個號碼+第二區1-49號挑一個出來
+        //威力採 =>第一區1-38號挑6個號碼+第二區1-8號挑一個出來
+        //今彩539=>第一區1-39號挑5個號碼
+
+
+        //item代表樂透代號
+        //count =>第一區號碼次數  
+        //no1第一區最大值   
+        //no2第二區最大值(先預設為0)
+
+        //大樂透函數解法
+        function getRandNum(max) {
+            return Math.floor(Math.random() * max) + 1;
+        }
+
+        function getLotNum(item, count, no1, no2 = 0) {
+            let arrNum = [];
+            let i = 0;
+            while (i < count) {
+                //先取亂數
+                let lotNum = getRandNum(no1);
+                // 檢查陣列資料是否存在此號碼
+                if (arrNum.indexOf(lotNum) == -1) {
+                    //沒有重複，則加入陣列
+                    arrNum.push(lotNum);
+                    i++;
+                } else {
+                    //有重複
+                    console.log(`在編號${i}位置，${lotNum}重複了`);
+                    //i = i - 1; while沒有在最一開始的位置i++，所以這裡不用加入
+                }
+            }
+            console.log('第一區號碼:' + arrNum);
+            // 取第二區號碼
+            if (item == '1' || item == '2') {
+                let sepNum = getRandNum(no2);
+                console.log('第二區號碼:' + sepNum);
+            }
+        }
+
+        //跳脫字元符號 => \n  =>換行的意思
+        let lotGameNo = prompt('請輸入樂透號碼代號=>\n1.大樂透 2.威力彩 3.今彩539');
+        // 產生樂透號碼
+        switch (lotGameNo) {
+            case '1':
+                //產生大樂透號碼
+                getLotNum('1', 6, 49, 49);
+                break;
+            case '2':
+                //產生大樂透號碼
+                getLotNum('2', 6, 38, 8);
+                break;
+            case '3':
+                //產生大樂透號碼
+                getLotNum('3', 5, 39);
+                break;
+            default:
+                console.log('err!代號輸入錯誤');
+        }
+
+        if (lotGameNo == '1') {
+            getLotNum('1', 6, 49, 49);
+        } else if (lotGameNo == '2') {
+            getLotNum('2', 6, 38, 8);
+        } else if (lotGameNo == '3') {
+            getLotNum('3', 5, 39);
+        } else {
+            console.log('err!代號輸入錯誤');
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
