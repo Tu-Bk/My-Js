@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //建立一個加法運算函式 add()
+        //當呼叫函式的「參數值個數」不一定會跟「函數的參數值個數」相同時
+        //可以使用「其餘參數寫法」
+        //語法為三個連續小數點 => .... =>資料會形成一個陣列
+        function add(...number) {  //function ()裡面的參數值不一定是固定數量
+            let tot = 0;
+            //處理加法運算
+
+            //使用迴圈取得參數資料
+            // console.log('---  一般迴圈寫法  ---')
+            // console.log(number);
+            // for (let i = 0; i < number.length; i++) {
+            //     tot = tot + number[i];
+            // }
+
+            //使用for-of寫法
+            // console.log('---  for-of寫法  ---')
+            for (let add of number) {
+                tot = tot + add;
+            }
+
+            //回傳結果出來
+            return tot;
+        }
+        console.log(add(5));
+        console.log(add(5, 3));
+        console.log(add(5, 3, 5));
+        console.log(add(5, 3, 5, 2));
+        console.log(add(-2));
+
+
+    </script>
+</body>
+
+</html>

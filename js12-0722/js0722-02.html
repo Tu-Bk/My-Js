@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //樣板做法
+        console.log('---物件樣版---');
+        //建立物件樣板
+        //習慣物件樣版明成字首為大寫
+        //function Name  =>Name要大寫不然會變成函式
+        //第一步,先建立物件樣板
+        function Sdata(no, name, scorehtml, scorecss, scorejs, ...other) {
+            //this.代表物件本身  =xxx 代表給他的值
+            this.sid = no;
+            this.sName = name;
+            this.html = scorehtml;
+            this.css = scorecss;
+            this.javaScript = scorejs;
+            this.showData = function () {
+                console.log(`座號:${this.sid},姓名:${this.sName},個別分數:html:${this.html},css:${this.css},javaScript:${this.javaScript},成績分數:${this.html + this.css + this.javaScript}分`);
+                console.log(`身高:${other[0][0]},體重${other[0][1]}`)
+                // console.log(other);
+                // console.log(other[0][0]);  //從Sdata裡面的other抓出other1裡面的值
+            }
+
+
+        }
+        //使用物件樣版
+        //第二步,建立樣板變數
+        //先傳值給物件樣版
+        //我自己做的測試↓↓
+
+        no = window.prompt();
+        name = window.prompt();
+        scorehtml = Number(window.prompt());
+        scorecss = Number(window.prompt());
+        scorejs = Number(window.prompt());
+        let other1 = [];
+        for (let i = 0; i < 2; i++) {
+            other=Number(window.prompt());
+            other1.push(other);
+        }
+
+        let k1 = new Sdata(no, name, scorehtml, scorecss, scorejs, other1);
+        // console.log('輸入的值'+k1);
+        k1.showData();
+
+        //我自己做的測試↑↑
+
+        let s1 = new Sdata('S001', '王小名', 100, 100, 100, 157, 50);
+        //再呼叫物件,才能顯示資料出來
+        s1.showData();
+        console.log(`-----------------------`);
+
+
+        let s2 = new Sdata('S002', '張三', 60, 60, 60, 170, 78);
+        s2.showData();
+        console.log(`-----------------------`);
+
+
+        let s3 = new Sdata('S003', '李四', 80, 80, 80, 168, 48);
+        s3.showData();
+
+        console.log(` `);
+
+        console.log(`--------下面為測試題--------`);
+        //其他:計算全班各科總分
+
+        //方法一:
+        //直接使用s1,s2,s3的成員
+        console.log('---計算全班各科總分---');
+        console.log('班級html分數:' + (s1.html + s2.html + s3.html));
+        console.log('班級html分數:' + (s1.css + s2.css + s3.css));
+        console.log('班級html分數:' + (s1.javaScript + s2.javaScript + s3.javaScript));
+
+        console.log(`--------上面為測試題--------`);
+        console.log(` `);
+
+        //方法二:陣列物件
+        console.log('---陣列物件樣板---');
+
+        //宣告陣列
+        let arrObject = [s1, s2, s3];//(上面已經有設定過s1,s2,s3了)
+        // console.log(arrObject);
+
+
+        // let tothtml=0;
+        // let totcss=0;
+        // let totjs=0;
+        let tothtml = 0, totcss = 0, totjs = 0;  //合併寫法  
+
+        for (let i = 0; i < arrObject.length; i++) {  //arrObject.length的.length是代表取arrObject這個陣列裡面的長度
+            tothtml = tothtml + arrObject[i].html;
+            totcss = totcss + arrObject[i].css;
+            totjs = totjs + arrObject[i].javaScript;
+            //另外的寫法
+            // tothtml +=arrObject[i].html;
+            // totcss +=arrObject[i].css;
+            // totjs +=arrObject[i].javaScript;
+        }
+        console.log('html總分:' + tothtml);
+        console.log('css總分:' + totcss);
+        console.log('javaScript總分:' + totjs);
+
+
+    </script>
+</body>
+
+</html>
