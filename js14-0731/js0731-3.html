@@ -17,7 +17,7 @@
         <label for="city">請選擇縣市</label>
         <!-- label => 點擊後引道到對應的ID身上 -->
         <select name="" id="city">
-
+            <!-- select => 代表下拉式選單 -->
             <option value="">請選擇</option>
             <!-- 自行撰寫局部的JS -->
             <script>
@@ -25,6 +25,7 @@
                 let arrCity = ['台北市', '新北市', '桃園市', '新竹市'];
                 for (let i = 0; i < arrCity.length; i++) {
                     document.write(`<option value=${arrCity[i]}>${arrCity[i]}</option>`);
+                    /* option =>代表下拉式選單裡的其中一個項目 */
                 }
 
             </script>

@@ -2,11 +2,11 @@
 let result = '';
 
 //取得送出按鈕
-let Mybtn = document.getElementById('btn');
-// let Mybtn =document.querySelector('#btn');
+let myBtn = document.getElementById('btn');
+// let myBtn =document.querySelector('#btn');
 
 //監聽按鈕是否左鍵一下 (匿名函式)
-Mybtn.addEventListener('click', function () {
+myBtn.addEventListener('click', function () {
     //取得下拉式方塊
     let Mycity = document.getElementById('city');
     //使用迴圈，逐一檢查是否被選取  => selecyed
@@ -26,7 +26,7 @@ Mybtn.addEventListener('click', function () {
 
 
 // //監聽按鈕是否左鍵一下 (箭頭函式)
-// Mybtn.addEventListener('click', () => {
+// myBtn.addEventListener('click', () => {
 //     //取得下拉式方塊
 //     let Mycity = document.getElementById('city');
 //     //使用迴圈，逐一檢查是否被選取  => selecyed
