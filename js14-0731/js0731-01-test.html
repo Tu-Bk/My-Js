@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #sel{
+            color: #be6e6e;
+        }
+        #notsel{
+            color: #ce5cc7;
+        }
+    </style>
+</head>
+
+<body>
+    <form><!-- form => 表單 -->
+        請選擇飲料
+        <!-- value =>  代表值 -->
+        <input type="checkbox" name="drinks" id="drinks1" value="冰美式">冰美式
+        <input type="checkbox" name="drinks" id="drinks2" value="冰拿鐵">冰拿鐵
+        <input type="checkbox" name="drinks" id="drinks3" value="冰紅茶">冰紅茶
+        <input type="button" id="btn" value="送出">
+    </form>
+
+    <div id="showData">
+        <!-- <div>
+            <ul id="sel">被勾選的飲料
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <div>
+            <ul id="notsel">沒被勾選的飲料
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div> -->
+    </div>
+
+    <!-- <script>
+        let myBtn = document.getElementById('btn');
+
+        //第二步 => 監聽按鈕是否被按了(click => 左鍵一下的事件)
+        myBtn.addEventListener('click', function () {
+            let arrResult = [];
+            let arrResultNot = [];
+            let myDrinks = document.getElementsByName('drinks');
+
+            // let arr1 = ['冰美式', '冰拿鐵', '冰紅茶'];
+            for (let i = 0; i < myDrinks.length; i++) {
+                //有被勾選的項目
+                if (myDrinks[i].checked) { //checked => 在html的checkbox已有內部屬性
+                  //    arrResult.push(myDrinks[i].value);
+                    document.write(`<ul>被勾選的飲料<li>${myDrinks[i].value}</li>`);
+                }
+
+                //沒有被勾選的項目 => 使用Not反向!做顯示
+                // if (!myDrinks[i].checked) {
+                //     // checked => 在html的checkbox已有內部屬性
+                      //      arrResultNot.push(myDrinks[i].value);
+                //     document.write(`<ul>沒有被勾選的飲料<li>${arr1[i]}</li>`)
+                // }
+            }
+            // for (let i = 0; i < arr1.length; i++) {
+            //     if (!myDrinks[i].checked) { //checked => 在html的checkbox已有內部屬性
+            //         document.write(`<ul>沒有被勾選的飲料<li>${arr1[i]}</li>`)
+            //     }
+            // }
+        });
+
+    </script> -->
+
+    <script src="./js0731-4-test.js"></script>
+</body>
+
+</html>
