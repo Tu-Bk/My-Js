@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .wrap {
+        margin: 100px 0 0 50px;
+    }
+
+    ul {
+        /* border: 1px solid #444; */
+        border-radius: 5px;
+        width: 207px;
+    }
+
+    ul li {
+        position: relative;
+        padding: 20px 0 20px 5px;
+    }
+
+
+    .close {
+        padding: 18px 10px;
+        /* margin: 0 135px; */
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+
+
+    .close:hover {
+        background-color: brown;
+        color: white;
+        cursor: pointer;
+    }
+</style>
+
+
+
+
+<body>
+    <div class="wrap">
+        <form action="">
+            <input type="text" id="myInput">
+            <input type="button" value="加入" id="btn">
+            <input type="button" id="btn2" value="刪除">
+        </form>
+
+
+
+        <ul id="myUl">
+            <li>HTML</li><!-- <span class="close">刪除</span> -->
+            <li>CSS</li>
+        </ul>
+    </div>
+
+
+
+
+    <script>
+        // //取得文字方塊內容
+        // let newWord = document.querySelector('#txt1');
+        //     // console.log(newWord);
+
+
+        //新增LI項目後面的刪除紐 => X
+        var myNodelist = document.getElementsByTagName('li');
+        var i;
+        for (let i = 0; i < myNodelist.length; i++) {
+            var span = document.createElement('SPAN');
+            //在Li內增加span標籤
+            var txt = document.createTextNode('X');
+            //在span標籤內加入X
+            span.className = "close";
+            //新增close標籤把span標籤包住
+            //新增類別名稱
+            span.appendChild(txt);
+            // span.appendChild => 在span節點最後一個子節點後插入txt新節點
+            myNodelist[i].appendChild(span);
+
+            // 新增點擊X刪除li
+            span.addEventListener('click', () => {
+                //取得第一個li
+                let removeElm = document.getElementsByTagName('li'/* 指定第一個li */)[0];
+                //找到父元素節點
+                let parentElm = removeElm.parentNode;
+                //從父元素移除第一個li節點
+                parentElm.removeChild(removeElm)[0];
+                console.log(parentElm);
+            })
+        };
+
+
+        // //刪除第一個li
+        // btn2.addEventListener('click', () => {
+        //     //取得第一個li
+        //     let removeElm = document.getElementsByTagName('li'/* 指定第一個li */)[0];
+        //     //找到父元素節點
+        //     let parentElm = removeElm.parentNode;
+        //     //從父元素移除第一個li節點
+        //     parentElm.removeChild(removeElm);
+        //     console.log(parentElm);
+        // });
+
+
+
+        //點擊X刪除li
+
+        //     for(let i=0;span.length;i++){
+        //     span.addEventListener('click', () => {
+        //         //取得某個li
+        //         let removeElmwho = document.getElementsByTagName('li')[0];
+        //         // console.log(removeElmwho);
+        //         //找到父元素節點
+        //         let parentElm2 = removeElmwho.parentNode;
+        //         //從父元素移除第一個li節點
+        //         parentElm2.removeChild(removeElmwho);
+        //         console.log(parentElm2);
+        //     });
+        // }
+
+
+
+
+
+
+
+        //取得新增按鈕事件
+        let myBtn = document.querySelector('#btn');
+        myBtn.addEventListener('click', function () {
+            /* 
+                        //取得文字方塊內容
+                        let newWord = document.querySelector('#txt1');
+                        // let newbut1 =document.querySelector('#but1');
+                        // console.log(newWord);
+                        console.log(newWord.value);
+                        //第一步: 建立新節點 =>li
+                        newElm = document.createElement('li');
+                        // newbut2 = document.createElement('li');
+                        //第二步: 建立文字結點 => CSS
+                        newText = document.createTextNode(newWord.value);
+                        // newbut3 = document.createElement (button.newbut1.value);
+                        //第三步: 將文字結點加入倒新節點裡面
+                        newElm.appendChild(newText);
+                        // newbut2.appendChild(newbut3);
+                        // console.log(newbut3);
+                        // newText.insertBefore(newbut3);
+                        //第四步: 取得要加入新節點的位置
+                        // let gteUl = document.getElementsByTagName('ul');
+                        gteUl = document.querySelector('ul');
+                        // gtebut = document.querySelector('li');
+                        //第五步: 將新節點加入倒UL元素的最後一個子節點
+                        gteUl.appendChild(newElm);
+                        // newElm.appendChild(newbut3);
+             */
+
+            //新增li元素    
+            var li = document.createElement('li');
+            //取的文字方塊的內容
+            var inputValue = document.getElementById('myInput').value;
+            console.log(inputValue);
+
+            //新增文字節點
+            var t = document.createTextNode(inputValue);
+            //將文字節點加入到新節點li
+            li.appendChild(t);
+            //檢查文字方塊是否有內容
+            if (inputValue.trim() === '') {
+                alert('文字方塊不能空白');
+            } else {
+                document.getElementById('myUl').appendChild(li);
+
+
+
+                //動態新增加入時的X
+                var span = document.createElement('SPAN');
+                var txt = document.createTextNode('X');
+                span.className = "close"; //新增類別名稱
+                span.appendChild(txt);
+                li.appendChild(span);
+
+                let mySpan2 = document.getElementsByTagName('span');
+                console.log(mySpan2);
+
+
+                for (i = 0; i < mySpan2.length; i++) {
+                    mySpan2[i].onclick = function () {
+                        console.log(mySpan2[i]);
+                        // 取得某個li
+                        let removeElmwho = document.getElementsByTagName('li')[0];
+                        // console.log(removeElmwho);
+                        //找到父元素節點
+                        let parentElm2 = removeElmwho.parentNode;
+                        //從父元素移除第一個li節點
+                        parentElm2.removeChild(removeElmwho);
+                        console.log(parentElm2);
+                    }
+                }
+
+            }
+            //清除文字填寫方塊內容
+            document.getElementById('myInput').value = ''
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+        // //第一步: 建立新節點 =>li
+        // let newElm = document.createElement('li');
+        // //第二步: 建立文字結點 => CSS
+        // let newText = document.createTextNode('CSS');
+        // //第三步: 將文字結點加入倒新節點裡面
+        // newElm.appendChild(newText);
+        // //第四步: 取得要加入新節點的位置
+        // // let gteUl = document.getElementsByTagName('ul');
+        // let gteUl = document.querySelector('ul');
+        // //第五步: 將新節點加入倒UL元素的最後一個子節點
+        // gteUl.appendChild(newElm);
+
+
+
+
+    </script>
+</body>
+
+</html>
