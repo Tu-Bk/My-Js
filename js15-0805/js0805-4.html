@@ -74,7 +74,7 @@
         //     // console.log(newWord);
 
 
-        //新增LI項目後面的刪除紐 => X
+        //新增LI項目後面的刪除按鈕 => X
         var myNodelist = document.getElementsByTagName('li');
         var i;
         for (let i = 0; i < myNodelist.length; i++) {
@@ -91,13 +91,13 @@
 
             // 新增點擊X刪除li
             span.addEventListener('click', () => {
-                //取得第一個li
-                let removeElm = document.getElementsByTagName('li'/* 指定第一個li */)[0];
+                //取得第I個li
+                let removeElm = document.getElementsByTagName('li'/* 指定第一個li */)[i];
+                // console.log('li'.length);
                 //找到父元素節點
                 let parentElm = removeElm.parentNode;
                 //從父元素移除第一個li節點
-                parentElm.removeChild(removeElm)[0];
-                console.log(parentElm);
+                parentElm.removeChild(removeElm);
             })
         };
 
@@ -115,20 +115,17 @@
 
 
 
-        //點擊X刪除li
-
-        //     for(let i=0;span.length;i++){
-        //     span.addEventListener('click', () => {
-        //         //取得某個li
-        //         let removeElmwho = document.getElementsByTagName('li')[0];
-        //         // console.log(removeElmwho);
-        //         //找到父元素節點
-        //         let parentElm2 = removeElmwho.parentNode;
-        //         //從父元素移除第一個li節點
-        //         parentElm2.removeChild(removeElmwho);
-        //         console.log(parentElm2);
-        //     });
-        // }
+        // // 點擊X刪除li
+        // Span.addEventListener('click', () => {
+        //     //取得某個li
+        //     let removeElmwho = document.getElementsByTagName('li')[0];
+        //     // console.log(removeElmwho);
+        //     //找到父元素節點
+        //     let parentElm2 = removeElmwho.parentNode;
+        //     //從父元素移除第一個li節點
+        //     parentElm2.removeChild(removeElmwho);
+        //     console.log(parentElm2);
+        // });
 
 
 
@@ -190,21 +187,21 @@
                 span.appendChild(txt);
                 li.appendChild(span);
 
-                let mySpan2 = document.getElementsByTagName('span');
-                console.log(mySpan2);
+                let mySpan = document.getElementsByTagName('span');
+                console.log(mySpan);
 
 
-                for (i = 0; i < mySpan2.length; i++) {
-                    mySpan2[i].onclick = function () {
-                        console.log(mySpan2[i]);
+                for (i = 0; i < mySpan.length; i++) {
+                    mySpan[i].onclick = function () {
+                        console.log(mySpan[i]);
                         // 取得某個li
                         let removeElmwho = document.getElementsByTagName('li')[0];
                         // console.log(removeElmwho);
                         //找到父元素節點
-                        let parentElm2 = removeElmwho.parentNode;
+                        let parentElm = removeElmwho.parentNode;
                         //從父元素移除第一個li節點
-                        parentElm2.removeChild(removeElmwho);
-                        console.log(parentElm2);
+                        parentElm.removeChild(removeElmwho);
+                        console.log(parentElm);
                     }
                 }
 
@@ -213,12 +210,6 @@
             document.getElementById('myInput').value = ''
 
         });
-
-
-
-
-
-
 
 
 
