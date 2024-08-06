@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- ↓↓事件基本語法↓ -->
+    <!-- <div 事件名稱="程式碼">標籤內容</div> -->
+    <!-- <button 事件名稱:'程式碼'>按鈕內容</button> -->
+
+    <!-- ↓↓寫在div裡面的方法↓↓ -->
+    <!-- <div onclick="document.body.innerHTML ='Hello'">按一下變更內容</div> -->
+    <!-- ↑↑寫在div裡面的方法↑↑ -->
+
+    <div onclick="changeP1()">按一下變更內容</div>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit, nihil.</p>
+
+    <h2 onclick="changeP2()">段落二</h2>
+    <p id="p2" class="p2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe, dolorum.</p>
+
+    <script>
+        function changeP1() {
+            /* ↓↓變更網頁body內容↓↓ */
+            // document.body.innerHTML = 'Hello';
+            /* ↑↑變更網頁body內容↑↑ */
+
+            /* ↓↓變更段落內容↓↓ */
+            /* 如果 getElementsByTagName 抓不到後面的標籤就改用  querySelector */
+            document.querySelector('p').innerHTML = 'Hello'
+            /* ↑↑變更段落內容↑↑ */
+
+            /* ↓↓只取得第一個段落↓↓ */
+            // console.log(document.querySelector('p'));
+            /* ↑↑只取得第一個段落↑↑ */
+
+            /* ↓↓只取得所有段落-(方法一)↓↓ */
+            // console.log(document.querySelectorAll('p'));
+            /* ↑↑只取得所有段落-(方法一)↑↑ */
+
+            /* ↓↓只取得所有段落-(方法二)↓↓ */
+            // console.log(document.getElementsByTagName('p'));
+            /* ↑↑只取得所有段落-(方法二)↑↑ */
+
+            /* ↓↓產生集合陣列物件↓↓ */
+            // let p1 = document.getElementsByTagName('p')[0].innerHTML="Hello";
+            /* ↑↑產生集合陣列物件↑↑ */
+
+        }
+
+        function changeP2() {
+            /* ↓↓取得第二個段落，並修正P的內容↓↓ */
+            // document.getElementsByTagName('p')[1].innerHTML="第二個段落被我更改掉了"
+            /* ↑↑取得第二個段落，並修正P的內容↑↑ */
+
+            /* ↓↓取得id後改變段落內容↓↓ */
+            // document.getElementById('p2').innerHTML = "取得id後改變段落內容"
+            /* ↑↑取得id後改變段落內容↑↑ */
+
+            /* ↓↓取得class後改變段落內容↓↓ */
+            // document.getElementsByClassName('p2')[0].innerHTML = "取得class後改變段落內容"
+            // console.log( document.getElementsByClassName('p2'));
+            document.querySelector('.p2').innerHTML = "取得class後改變段落內容"
+            /* ↑↑取得class後改變段落內容↑↑ */
+
+        }
+    </script>
+</body>
+
+</html>

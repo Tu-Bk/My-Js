@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            margin-left: auto;
+            margin-right: auto;
+            /* margin-top: auto;
+            margin-bottom: auto; */
+            text-align: center;
+border: 3px solid #777;
+        }
+
+        marquee {
+            background-color: bisque;
+            width: 30%;
+            border: 1px solid #333;
+            border-radius: 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <!-- behavior  => 設定捲動方式
+        預設為:scroll
+        左右來回:alternate
+        只移動一次:slide
+        -->
+        <!-- 移動速度 =>  scrollamount="10"  -->
+        <!-- 移動方向:direction  預設為left  -->
+        <!-- 跑馬燈文字效果 -->
+        <marquee behavior="alternate" direction="right" onmouseover="stop();" onmouseout="start();" scrollamount="10">
+            <!-- behavior="alternate" 設定捲動方式   預設為scroll -->
+
+            <!--  scrollamount="10" 設定卷動速度 -->
+            跑馬燈文字效果
+        </marquee>
+    </div>
+    <script>
+
+
+
+    </script>
+</body>
+
+</html>

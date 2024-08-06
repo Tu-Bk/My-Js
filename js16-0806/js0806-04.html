@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .item span {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="item">
+        <span onclick="changeToAbout();">關於我</span>
+        <span onclick="changeToExps();">學經歷</span>
+        <span onclick="changeToContact();">聯絡我</span>
+        <span onclick="changeToNews();">最新活動</span>
+    </div>
+    <hr>
+    <div id="about" style="display: none;">關於我大家好,我是XXX</div>
+    <div id="exps" style="display: none;">學經歷:Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, assumenda?
+    </div>
+    <div id="contact" style="display: none;">聯絡我:Lorem ipsum dolor sit amet.</div>
+    <div id="news" style="display: none;">最新活動內容區</div>
+
+    <script>
+        let aboutDiv = "";
+        let expsDiv = "";
+        let contactDiv = "";
+        let newsDiv = "";
+
+        function getDiv() {
+            /* 共同的部分 */
+            /* 1.先取得操作的標籤div */
+            aboutDiv = document.querySelector('#about');
+            expsDiv = document.querySelector('#exps');
+            contactDiv = document.querySelector('#contact');
+            newsDiv = document.querySelector('#news');
+
+            /* 2.在對標籤div操作 */
+
+            aboutDiv.style.display = 'none';
+            expsDiv.style.display = 'none';
+            contactDiv.style.display = 'none';
+            newsDiv.style.display = 'none';
+        }
+
+        /* 關於我 */
+        function changeToAbout() {
+            getDiv();
+            // console.log(aboutDiv);
+            /* 先取得操作的標籤div */
+            // let aboutDiv = document.querySelector('#about');
+            // let expsDiv = document.querySelector('#exps');
+            // let contactDiv = document.querySelector('#contact');
+            /* 在對標籤div操作*/
+            aboutDiv.style.display = 'block';
+            // expsDiv.style.display = 'none';
+            // contactDiv.style.display = 'none';
+        }
+
+
+
+        /* 學經歷 */
+        function changeToExps() {
+            getDiv();
+            /* 先取得操作的標籤div */
+            // let aboutDiv = document.querySelector('#about');
+            // let expsDiv = document.querySelector('#exps');
+            // let contactDiv = document.querySelector('#contact');
+            /* 在對標籤div操作*/
+            // aboutDiv.style.display = 'none';
+            expsDiv.style.display = 'block';
+            // contactDiv.style.display = 'none';
+        }
+
+        /* 聯絡我 */
+        function changeToContact() {
+            getDiv();
+            /* 先取得操作的標籤div */
+            // let aboutDiv = document.querySelector('#about');
+            // let expsDiv = document.querySelector('#exps');
+            // let contactDiv = document.querySelector('#contact');
+            /* 在對標籤div操作*/
+            // aboutDiv.style.display = 'none';
+            // expsDiv.style.display = 'none';
+            contactDiv.style.display = 'block';
+        }
+
+        /* 最新消息 */
+        function changeToNews() {
+            getDiv();
+            /* 先取得操作的標籤div */
+            // let aboutDiv = document.querySelector('#about');
+            // let expsDiv = document.querySelector('#exps');
+            // let contactDiv = document.querySelector('#contact');
+            /* 在對標籤div操作*/
+            // aboutDiv.style.display = 'none';
+            // expsDiv.style.display = 'none';
+            newsDiv.style.display = 'block';
+        }
+    </script>
+</body>
+
+</html>

@@ -89,16 +89,18 @@
             // span.appendChild => 在span節點最後一個子節點後插入txt新節點
             myNodelist[i].appendChild(span);
 
-            // 新增點擊X刪除li
-            span.addEventListener('click', () => {
-                //取得第I個li
-                let removeElm = document.getElementsByTagName('li'/* 指定第一個li */)[i];
-                // console.log('li'.length);
-                //找到父元素節點
-                let parentElm = removeElm.parentNode;
-                //從父元素移除第一個li節點
-                parentElm.removeChild(removeElm);
-            })
+            // // 新增點擊X刪除li
+            // span.addEventListener('click', () => {
+            //     //取得第I個li
+            //     let removeElm = document.getElementsByTagName('li'/* 指定第一個li */)[i];
+            //     // console.log('li'.length);
+            //     //找到父元素節點
+            //     let parentElm = removeElm.parentNode;
+            //     //從父元素移除第一個li節點
+            //     parentElm.removeChild(removeElm);
+            // })
+
+
         };
 
 
@@ -128,7 +130,18 @@
         // });
 
 
-
+        /* 針對現有的li按下X，刪除對應的li */
+        var close = document.getElementsByClassName('close');
+        for (let i = 0; i < close.length; i++) {
+            console.log(close[i]);
+            close[i].onclick = function () {
+                var curli = this.parentNode;
+                /* 用display:none做隱藏的 */
+                curli.style.display = 'none';
+                /* ↓↓新增刪除線↓↓ */
+                // curli.style.textDecoration = 'line-through';
+            }
+        }
 
 
 
@@ -181,29 +194,36 @@
 
 
                 //動態新增加入時的X
-                var span = document.createElement('SPAN');
+                var span = document.createElement('span');
                 var txt = document.createTextNode('X');
                 span.className = "close"; //新增類別名稱
                 span.appendChild(txt);
                 li.appendChild(span);
 
-                let mySpan = document.getElementsByTagName('span');
-                console.log(mySpan);
 
-
-                for (i = 0; i < mySpan.length; i++) {
-                    mySpan[i].onclick = function () {
-                        console.log(mySpan[i]);
-                        // 取得某個li
-                        let removeElmwho = document.getElementsByTagName('li')[0];
-                        // console.log(removeElmwho);
-                        //找到父元素節點
-                        let parentElm = removeElmwho.parentNode;
-                        //從父元素移除第一個li節點
-                        parentElm.removeChild(removeElmwho);
-                        console.log(parentElm);
-                    }
+                /* 新增刪除動作 */
+                span.onclick = function () {
+                    var curli = this.parentNode;
+                    curli.style.display = 'none';
                 }
+
+
+                // let mySpan = document.getElementsByTagName('span');
+                // console.log(mySpan);
+
+                // for (i = 0; i < mySpan.length; i++) {
+                //     mySpan[i].onclick = function () {
+                //         console.log(mySpan[i]);
+                //         // 取得某個li
+                //         let removeElmwho = document.getElementsByTagName('li')[0];
+                //         // console.log(removeElmwho);
+                //         //找到父元素節點
+                //         let parentElm = removeElmwho.parentNode;
+                //         //從父元素移除第一個li節點
+                //         parentElm.removeChild(removeElmwho);
+                //         console.log(parentElm);
+                //     }
+                // }
 
             }
             //清除文字填寫方塊內容
