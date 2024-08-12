@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        #errMsg {
+            border: 2px solid #777;
+            border-radius: 20px;
+            padding: 5px;
+            width: 160px;
+            display: none;
+        }
+
+        #errMsgMobile {
+            border: 2px solid #777;
+            border-radius: 20px;
+            padding: 5px;
+            width: 160px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 當游標離開文字方塊時，檢查輸入內容不足5個字時，顯示訊息 -->
+    <form>
+        <label for="uid">會員編號</label>
+        <input type="text" id="uid" size="5" maxlength="5"><br>
+        <!-- ↑↑maxlength="5" 限制最大文字字數↑↑  -->
+        <label for="mobile">手機號碼</label>
+        <input type="text" id="mobile" size="10" maxlength="10"><br>
+        <span id="errMsg"></span><br><!-- 文字不足五個字顯示err -->
+        <span id="errMsgMobile"></span><br><!-- 文字不足五個字顯示err -->
+        <input type="button" value="送出">
+    </form>
+
+    <script>
+        let uid = document.getElementById('uid');
+        uid.addEventListener('blur', function () {
+            // alert('滑鼠呢');
+            /* 取得errMsg的位置 */
+            let errMsg = document.getElementById('errMsg');
+
+            /* ↓↓檢查文字方塊內容是否有5個字↓↓ */
+            if (this.value.length != 5) {
+                /* ↓↓若沒有則顯示訊息errMsg↓↓ */
+                errMsg.textContent = "會員編號必須五個字";
+                errMsg.style.display = "block";
+            } else {
+                /* ↓↓若有則清除提醒迅即給errMsg↓↓ */
+                errMsg.textContent = " ";
+                errMsg.style.display = "none";
+            }
+        });
+
+
+        let mobile = document.getElementById('mobile');
+        mobile.addEventListener('blur', function () {
+            // alert('滑鼠呢');
+            /* 取得errMsg的位置 */
+            let errMsgMobile = document.getElementById('errMsgMobile');
+
+            /* ↓↓檢查文字方塊內容是否有5個字↓↓ */
+            if (this.value.length != 10) {
+                /* ↓↓若沒有則顯示訊息errMsg↓↓ */
+                errMsgMobile.textContent = "會員號碼必須十個字";
+                errMsgMobile.style.display = "block";
+            } else {
+                /* ↓↓若有則清除提醒迅即給errMsg↓↓ */
+                errMsgMobile.textContent = " ";
+                errMsgMobile.style.display = "none";
+            }
+        });
+
+    </script>
+    <!--  ----------------------------------------------------------  -->
+
+    <!--  整合方法 -->
+    <!-- <script>
+        /* 被共用的檢查字數函式 */
+        let uid = document.getElementById('uid');
+        uid.addEventListener('blur', function (e) {
+            checkwordNum(e, 5, '會員編號')
+        });
+
+        let mobile = document.getElementById('mobile');
+        mobile.addEventListener('blur', function (e) {
+            checkwordNum(e, 10, '手機號碼')
+        });
+
+
+
+        function checkwordNum(e, numLength, labelNum) {
+            // alert('滑鼠呢');
+            /* 取得errMsg的位置 */
+            let errMsg = document.getElementById('errMsg');
+
+            /* ↓↓檢查文字方塊內容是否有?個字↓↓ */
+            if (e.target.value.length != numLength) {
+                /* ↓↓若沒有則顯示訊息errMsg↓↓ */
+                // errMsg.textContent = "會員編號必須五個字";
+                // errMsg.textContent = labelNum+"必須"+numLength+"個字";
+                errMsg.textContent = `${labelNum}必須是${numLength}個字`;
+                errMsg.style.display = "block";
+            } else {
+                /* ↓↓若有則清除提醒迅即給errMsg↓↓ */
+                errMsg.textContent = " ";
+                errMsg.style.display = "none";
+            }
+        } -->
+
+
+    </script>
+</body>
+
+</html>
