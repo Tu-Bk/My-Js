@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myDiv {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #444;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myDiv"></div>
+    <button id="btn1" onclick="changeR();">紅</button>
+    <button id="btn2" onclick="changeG();">綠</button>
+    <button id="btn3" onclick="changeB();">藍</button>
+    <hr>
+    <button id="btn1" onclick="changeR('r');">紅</button>
+    <button id="btn2" onclick="changeG('g');">綠</button>
+    <button id="btn3" onclick="changeB('b');">藍</button>
+
+
+    <script>
+        /* 第一種方法 */
+        // let div = document.getElementById('myDiv');
+        // let btn1 = document.getElementById('btn1');
+        // let btn2 = document.getElementById('btn2');
+        // let btn3 = document.getElementById('btn3');
+
+        // btn1.addEventListener('click', function () {
+        //     div.style.backgroundColor = 'red';
+        // })
+
+        // btn2.addEventListener('click', function () {
+        //     div.style.backgroundColor = 'green';
+        // })
+
+        // btn3.addEventListener('click', function () {
+        //     div.style.backgroundColor = 'blue';
+        // })
+
+
+        /* 第二種方法 */
+        // 紅
+        function changeR() {
+            let mydiv = document.getElementById('myDiv');
+            mydiv.style.backgroundColor = 'red'
+        }
+        // 綠
+        function changeG() {
+            let mydiv = document.getElementById('myDiv');
+            mydiv.style.backgroundColor = 'green'
+        }
+        // 藍
+        function changeB() {
+            let mydiv = document.getElementById('myDiv');
+            mydiv.style.backgroundColor = 'blue'
+        }
+
+        /* 第三種方法 */
+        /* 整合上方函式為一個函式，傳參數 */
+        function changeColor(myColor) {
+            /* switch方法 */
+            // let mydiv = document.getElementById('myDiv');
+            // switch (myColor) {
+            //     case 'r':
+            //         mydiv.style.backgroundColor = 'red'
+            //         break;
+            //     case 'g':
+            //         mydiv.style.backgroundColor = 'green'
+            //         break;
+            //     case 'b':
+            //         mydiv.style.backgroundColor = 'blue'
+            //         break;
+            // }
+
+            /* if方法 */
+            let colorName='';
+            if (myColor == 'r') {
+                colorName='red';
+            } else if (myColor == 'g') {
+                colorName='green';
+            } else if (myColor == 'b') {
+                colorName='blue';
+            }
+            mydiv.style.backgroundColor=colorName;
+        }
+    </script>
+</body>
+
+</html>

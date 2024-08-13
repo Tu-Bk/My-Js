@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            font-size: 32px;
+            color: green;
+        }
+
+        .hot {
+            font-size: 64px;
+            font-weight: bold;
+        }
+
+        .restpreHot {
+            font-size: 32px;
+            font-weight: normal;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- 使用style屬性動態改文字色彩 -->
+    <p id="msg" onmouseover="changeColor()" onmouseout="restore()">Hello</p>
+
+    <script>
+        /* 滑鼠碰到時變色 */
+        function changeColor() {
+            /* 取得變色目標 */
+            let msg = document.getElementById('msg');
+            //前景色
+            msg.style.color = 'red';
+            //背景色
+            msg.style.backgroundColor = 'black';
+            // 套用CSS預先做好的類別樣式
+            msg.className = "hot";
+        }
+
+        /* 滑鼠離開時還原色彩 */
+        function restore() {
+            let msg = document.getElementById('msg');
+            //前景色空字串 (連續兩次 「單引號」或者「雙引號」) => 回到沒有
+            msg.style.color = '';
+            //背景色空字串  =>回到沒有變色的狀態
+            msg.style.backgroundColor = '';
+            // 套用CSS預設好的類別樣式
+            // msg.className = 'restpreHot';
+            /* 移除類別 */
+            msg.className = '';
+
+
+        }
+    </script>
+</body>
+
+</html>

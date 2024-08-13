@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            margin: 100px;
+            /* border: 1px solid #444; */
+        }
+
+        img {
+            width: 200px;
+            height: 200px;
+        }
+
+        #div {
+            display: flex;
+        }
+
+        #div img {
+            padding: 0 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 換圖效果 -->
+    <div class="wrap">
+        <div>
+            <img src="./image/627f10b8ace6a2af7e17529a5e17d84e.jfif" alt="" id="pic" onmouseover="changePic()"
+                class="picL" onmouseout="restorePic()">
+        </div>
+    </div>
+    <div id="div" class="picS">
+        <div id="img1"><a href="#"><img src="./image/coffee-2714970_1280.jpg" alt="" onclick="swap(this.src)"></a></div>
+        <div id="img2"><a href="#"><img src="./image/coffee-6464307_1280.jpg" alt="" onclick="swap(this.src)"></a></div>
+        <div id="img3"><a href="#"><img src="./image/IMG_0599.jpg" alt="" onclick="swap(this.src)"></a></div>
+        <div id="img4"><a href="#"><img src="./image/isorepublic-coffee-wood-1.jpg" alt="" onclick="swap(this.src)"></a></div>
+    </div>
+
+    <script>
+        // /* 換圖 */
+        // function changePic() {
+        //     /* 取得換圖的目標 */
+        //     let pic = document.getElementById('pic');
+        //     /* 換圖 */
+        //     pic.src = ' ';
+        // }
+
+        // /* 還原圖 */
+        // function restorePic() {
+        //     /* 取得換圖的目標 */
+        //     let pic = document.getElementById('pic');
+        //     /* 還原圖 */
+        //     pic.src = './image/627f10b8ace6a2af7e17529a5e17d84e.jfif ';
+        // }
+
+        // let pic = document.getElementById('pic');
+        // let img1 = document.getElementById('img1');
+        // let img2 = document.getElementById('img2');
+        // let img3 = document.getElementById('img3');
+        // let img4 = document.getElementById('img4');
+
+        // img1.addEventListener('click', function () {
+        //     pic.src = "./image/coffee-2714970_1280.jpg"
+        // });
+        // img2.addEventListener('click', function () {
+        //     pic.src = "./image/coffee-6464307_1280.jpg"
+        // });
+        // img3.addEventListener('click', function () {
+        //     pic.src = "./image/IMG_0599.jpg"
+        // });
+        // img4.addEventListener('click', function () {
+        //     pic.src = "./image/isorepublic-coffee-wood-1.jpg"
+        // });
+
+
+function swap(picSrc){
+        /* 取得大圖 */
+        let picL = document.getElementsByClassName("picL");
+        // function swap1() {
+            picL.src = picSrc;
+        // }
+
+    }
+    </script>
+</body>
+
+</html>
