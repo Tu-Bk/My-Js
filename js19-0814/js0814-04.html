@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btnOpen" onclick="openNewWindow();">開啟新視窗</button>
+    <button id="btnClose" onclick="closeNewWindow();">關閉新視窗</button>
+
+    <script>
+        function openNewWindow() {
+            /* 開啟新視窗 */
+            window.open('./new.html', 'myWin', 'height=200,width=400,location=1');
+        }
+        function closeNewWindow(){
+            if(myWin){
+                myWin.close();
+            }
+        }
+    </script>
+</body>
+
+</html>

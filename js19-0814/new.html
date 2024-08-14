@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>new.html</p>
+    <div id="clock">碼表</div>
+
+    <script>
+        window.addEventListener('load', function () {
+            let timer =window.setInterval(function(){
+                let clock=document.getElementById('clock');
+                clock.textContent='停留時間'+setTimeout().toLocaleString();
+            },100)
+        });
+    </script>
+</body>
+
+</html>

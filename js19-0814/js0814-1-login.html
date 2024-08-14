@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li id="user1_id">帳號:</li>
+            <li id="user1_upw">密碼:</li>
+        </ul>
+    </div>
+
+    <script>
+        /* 取得所有local storage裡的資料 */
+        // let date = window.localStorage;
+        // console.log(date);
+
+        /* 指定取出帳號 */
+        let uid = window.localStorage.getItem('user1_id');
+        // console.log(uid);
+        let user1_id = document.getElementById('user1_id');
+        user1_id.textContent = `帳號:${uid}`;
+
+
+        /* 指定取出密碼 */
+        let upw = window.localStorage.getItem('user1_upw');
+        // console.log(uid);
+        let user1_upw = document.getElementById('user1_upw');
+        user1_upw.textContent = `密碼:${upw}`;
+
+
+        /* 檢查使用者測試帳密是否為存在 */
+        if (uid == 'test' && upw == 'test123') {
+            alert('管理者帳密');
+        } else {
+            alert('登入失敗');
+            /* 登入失敗回到登入頁 */
+            window.location.href = './js0814-01.html';
+        }
+    </script>
+</body>
+
+</html>

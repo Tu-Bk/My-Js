@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="./js0814-03b.html" id="myFrm">
+        <label for="username">姓名</label>
+        <input type="text" id="username">
+        <input type="submit">
+    </form>
+    <br>
+    <button id="delbtn">刪除姓名</button>
+
+    <script>
+        /* 刪除姓名 (locals torage中的username) */
+        let delbtn = document.getElementById('delbtn');
+        delbtn.addEventListener('click', () => {
+            if (window.confirm('確定要刪除姓名嗎?')) {
+                window.localStorage.removeItem('username');
+                alert('刪除成功');
+            } else {
+                e.preventDefault();/* 取消預設行為(不執行表單action的動作) */
+                alert('刪除取消');
+            }
+        });
+
+
+        /* 取得表單 */
+        let myFrm = document.getElementById('myFrm');
+        myFrm.addEventListener('submit', (e) => {
+            if (window.confirm('確定要送出表單資料嗎?')) {
+                /* 取得姓名文字方塊 */
+                let username = document.getElementById('username');
+                /* 寫入時機，跨頁使用時再寫 */
+                /* 寫入性苗資料到local storage */
+                window.localStorage.setItem('username', username.value);
+                alert(username.value + '成功送出');
+            } else {
+                e.preventDefault();/* 取消預設行為(不執行表單action的動作) */
+                alert('取消送出');
+            }
+        });
+
+        /* 取得submit按鈕 */
+
+        /* 使用確認對話方塊 */
+
+    </script>
+</body>
+
+</html>

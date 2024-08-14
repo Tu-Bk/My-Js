@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div {
+            display: flex;
+        }
+
+        #box {
+            width: 100px;
+            height: 50px;
+        }
+        #checkbox_p{
+            display: none;
+color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div">
+        <p>選擇網站:</p>
+        <select name="box" id="box">
+            <option value=" " id="none"> </option>
+            <option value="google" id="google">google</option>
+            <option value="yahoo" id="yahoo">yahoo</option>
+            <option value="ie" id="id">ie</option>
+        </select>
+    </div>
+
+    <br>
+
+    <div>
+        <input type="checkbox" id="checkbox">我不同意
+        <br>
+        <p id="checkbox_p">你沒有打勾</p>
+        <button id="btn">提交</button>
+    </div>
+    <script>
+        let box = document.getElementById('box');
+        let google = document.getElementById('google');
+        box.addEventListener('click', (e) => {
+            // window.location.href = './js0814-01.html'
+            if (box.value == 'google') {
+                window.location.href = './js0814-01.html'
+            } else if (box.value == 'yahoo') {
+                window.location.href = './js0814-03.html'
+            } else if (box.value == 'ie') {
+                window.location.href = './js0814-04.html'
+            } else {
+                e.preventDefault();
+            }
+
+        });
+
+
+        let checkbox = document.getElementById('checkbox');
+        let btn = document.getElementById('btn');
+        let p=document.getElementById('checkbox_p');
+        btn.addEventListener('click', () => {
+            if (checkbox.addEventListener('change', () => {
+            })) {
+                window.location.href = './js0814-05.html'
+            } else {
+                p.style.display='block';
+                // alert('你沒有打勾');
+            }
+        });
+
+    </script>
+</body>
+
+</html>

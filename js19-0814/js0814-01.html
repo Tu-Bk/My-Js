@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 存放資料到本基端瀏覽器上的Local storage -->
+    <form action="./js0814-1-login.html">
+        <label for="uid">帳號</label>
+        <input type="text" id="uid">
+        <br>
+        <label for="upw">密碼</label>
+        <input type="text" id="upw">
+        <br><br>
+        <input id="btn" type="submit" value="登入1">
+        <input id="btn2" type="button" value="登入2">
+    </form>
+
+    <script>
+        // /* 清除Local storage */
+        // window.localStorage.clear();
+
+        // /* 寫入到Local storage */
+        // window.localStorage.setItem('a1', '7');
+        // window.localStorage.setItem('a2', '3');
+        // window.localStorage.setItem('a3', '10');
+
+        /* 登入1按鈕，使用submit搭配form的action */
+        /* 得到表單內的資料 */
+        let btn = document.getElementById('btn');
+        btn.addEventListener('click', function () {
+            // alert('你按了登入');
+            let uid = document.getElementById('uid');
+            // console.log(uid.value);
+
+
+            /* 把表單內的帳號資料寫到Local storage */
+            window.localStorage.setItem('user1_id', uid.value);
+
+            let upw = document.getElementById('upw');
+            /* 把表單內的密碼資料寫到Local storage */
+            window.localStorage.setItem('user_upw', upw.value);
+        });
+
+        /* 登入2按鈕，使用跳轉頁面的指令 */
+        let btn2 = document.getElementById('btn2');
+        btn2.addEventListener('click', function () {
+            window.location.href = './js0814-1-login.html';
+        });
+
+        /* 檢查帳密是否是否為管理者 */
+    </script>
+</body>
+
+</html>
